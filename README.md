@@ -109,12 +109,6 @@ health-inequality-explorer/
 
 ---
 
-## Screenshots
-
-*(adicionar capturas de tela do dashboard aqui — Home, Mapa Interativo e Comparar Países são as mais visuais)*
-
----
-
 ## Como reproduzir a análise
 
 ```r
