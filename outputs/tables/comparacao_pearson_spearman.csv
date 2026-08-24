@@ -1,0 +1,6 @@
+variavel,pearson,spearman,diferenca
+pib_per_capita_ppp,0.688,0.87,0.182
+gasto_saude_pc_ppp,0.684,0.883,0.199
+prevalencia_obesidade,0.356,0.38,0.024
+prevalencia_tabagismo,0.269,0.284,0.015
+populacao,0.013,-0.03,-0.043

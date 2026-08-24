@@ -1,0 +1,66 @@
+{
+  "variancia_explicada": [
+    {
+      "componente": "PC1",
+      "proporcao": 0.659,
+      "proporcao_acumulada": 0.659
+    },
+    {
+      "componente": "PC2",
+      "proporcao": 0.155,
+      "proporcao_acumulada": 0.814
+    },
+    {
+      "componente": "PC3",
+      "proporcao": 0.131,
+      "proporcao_acumulada": 0.945
+    },
+    {
+      "componente": "PC4",
+      "proporcao": 0.032,
+      "proporcao_acumulada": 0.977
+    },
+    {
+      "componente": "PC5",
+      "proporcao": 0.016,
+      "proporcao_acumulada": 0.992
+    },
+    {
+      "componente": "PC6",
+      "proporcao": 0.008,
+      "proporcao_acumulada": 1
+    }
+  ],
+  "loadings": [
+    {
+      "variavel": "expectativa_vida",
+      "pc1": -0.463,
+      "pc2": 0.037
+    },
+    {
+      "variavel": "log_mortalidade_infantil",
+      "pc1": 0.478,
+      "pc2": 0.072
+    },
+    {
+      "variavel": "prevalencia_obesidade",
+      "pc1": -0.261,
+      "pc2": 0.151
+    },
+    {
+      "variavel": "log_pib_per_capita_ppp",
+      "pc1": -0.476,
+      "pc2": 0.176
+    },
+    {
+      "variavel": "log_gasto_saude_pc_ppp",
+      "pc1": -0.479,
+      "pc2": 0.14
+    },
+    {
+      "variavel": "prevalencia_tabagismo",
+      "pc1": -0.18,
+      "pc2": -0.959
+    }
+  ]
+}

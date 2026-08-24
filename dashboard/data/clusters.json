@@ -1,0 +1,50 @@
+[
+  {
+    "cluster": 1,
+    "nome_cluster": "Mortalidade infantil elevada, baixa prevalência de obesidade",
+    "n_paises": 56,
+    "expectativa_vida_media": 79.2,
+    "mortalidade_infantil_media": 5.4,
+    "obesidade_media": 22.4,
+    "pib_per_capita_medio": 48753,
+    "gasto_saude_medio": 3118,
+    "tabagismo_medio": 26.9,
+    "paises_representativos": ["Portugal", "Korea, Rep.", "Israel"]
+  },
+  {
+    "cluster": 2,
+    "nome_cluster": "Mortalidade infantil muito elevada, indicadores de renda mais baixos",
+    "n_paises": 52,
+    "expectativa_vida_media": 73.3,
+    "mortalidade_infantil_media": 18.7,
+    "obesidade_media": 25,
+    "pib_per_capita_medio": 15691,
+    "gasto_saude_medio": 762,
+    "tabagismo_medio": 20,
+    "paises_representativos": ["Egypt, Arab Rep.", "Algeria", "Azerbaijan"]
+  },
+  {
+    "cluster": 3,
+    "nome_cluster": "Transição intermediária de desenvolvimento",
+    "n_paises": 17,
+    "expectativa_vida_media": 67.7,
+    "mortalidade_infantil_media": 39.4,
+    "obesidade_media": 10.6,
+    "pib_per_capita_medio": 5185,
+    "gasto_saude_medio": 192,
+    "tabagismo_medio": 34.3,
+    "paises_representativos": ["Lao PDR", "India", "Nepal"]
+  },
+  {
+    "cluster": 4,
+    "nome_cluster": "Alta longevidade e baixa mortalidade infantil",
+    "n_paises": 34,
+    "expectativa_vida_media": 61.7,
+    "mortalidade_infantil_media": 75.1,
+    "obesidade_media": 9.1,
+    "pib_per_capita_medio": 3651,
+    "gasto_saude_medio": 146,
+    "tabagismo_medio": 12.3,
+    "paises_representativos": ["Uganda", "Tanzania", "Cote d'Ivoire"]
+  }
+]
