@@ -386,7 +386,7 @@ fig_comparacao <- ggplot(emb_df, aes(dim1, dim2, color = cluster)) +
   theme(axis.text = element_blank(), panel.grid = element_blank(),
         strip.text = element_text(face = "bold"))
 
-ggsave("outputs/figures/projecoes_comparacao.png", fig_comparacao, width = 13, height = 4.8, dpi = 150)
+ggsave("outputs/figures/projecoes_comparacao.png", fig_comparacao, width = 13, height = 4.8, dpi = 150, bg = "white")
 
 grade_df <- purrr::imap_dfr(emb_grade, function(emb, nome) {
   tibble(config = nome, dim1 = emb[, 1], dim2 = emb[, 2], cluster = factor(rotulos))
@@ -402,7 +402,7 @@ fig_sens <- ggplot(grade_df, aes(dim1, dim2, color = cluster)) +
   theme(axis.text = element_blank(), panel.grid = element_blank(),
         strip.text = element_text(size = 8))
 
-ggsave("outputs/figures/projecoes_sensibilidade.png", fig_sens, width = 13, height = 6.5, dpi = 150)
+ggsave("outputs/figures/projecoes_sensibilidade.png", fig_sens, width = 13, height = 6.5, dpi = 150, bg = "white")
 
 # -----------------------------------------------------------------------
 # 6. Exportação (CSV + JSON para o dashboard)

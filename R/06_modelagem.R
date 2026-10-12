@@ -145,7 +145,7 @@ grafico_esperado_observado <- ggplot(dados_esperado,
   ) +
   theme_minimal()
 
-ggsave("outputs/figures/esperado_vs_observado.png", grafico_esperado_observado, width = 11, height = 8)
+ggsave("outputs/figures/esperado_vs_observado.png", grafico_esperado_observado, width = 11, height = 8, bg = "white")
 message("\nGráfico salvo em outputs/figures/esperado_vs_observado.png")
 
 # -----------------------------------------------------------------------

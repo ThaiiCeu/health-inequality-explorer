@@ -103,7 +103,7 @@ write_csv(variancia_explicada, "outputs/tables/pca_variancia_explicada.csv")
 
 grafico_scree <- fviz_eig(pca_resultado, addlabels = TRUE,
                            main = "Variância explicada por componente (scree plot)")
-ggsave("outputs/figures/pca_scree_plot.png", grafico_scree, width = 8, height = 5)
+ggsave("outputs/figures/pca_scree_plot.png", grafico_scree, width = 8, height = 5, bg = "white")
 
 # Regra de retenção: critério de Kaiser (autovalor > 1) E variância
 # acumulada. Reportamos os dois critérios em vez de escolher um só —
@@ -130,7 +130,7 @@ grafico_loadings <- fviz_pca_var(pca_resultado, col.var = "contrib",
                                   gradient.cols = c("#377EB8", "#E41A1C"),
                                   repel = TRUE,
                                   title = "Contribuição das variáveis aos componentes principais")
-ggsave("outputs/figures/pca_loadings_plot.png", grafico_loadings, width = 8, height = 7)
+ggsave("outputs/figures/pca_loadings_plot.png", grafico_loadings, width = 8, height = 7, bg = "white")
 
 # Biplot com países coloridos por região — checagem visual de que o
 # PC1 captura algo parecido com "nível de desenvolvimento" (regiões
@@ -142,7 +142,7 @@ grafico_biplot <- fviz_pca_biplot(pca_resultado,
                                    repel = TRUE,
                                    legend.title = "Região",
                                    title = "PCA — países e variáveis (PC1 x PC2)")
-ggsave("outputs/figures/pca_biplot.png", grafico_biplot, width = 11, height = 8)
+ggsave("outputs/figures/pca_biplot.png", grafico_biplot, width = 11, height = 8, bg = "white")
 
 message("\nGráficos de PCA salvos em outputs/figures/ (scree, loadings, biplot).")
 
@@ -172,11 +172,11 @@ pca_scores_retidos <- pca_resultado$x[, 1:2]  # PC1 e PC2 (~variância acumulada
 
 grafico_elbow <- fviz_nbclust(pca_scores_retidos, kmeans, method = "wss") +
   labs(title = "Método do cotovelo (Elbow) — soma de quadrados intra-cluster")
-ggsave("outputs/figures/cluster_elbow.png", grafico_elbow, width = 8, height = 5)
+ggsave("outputs/figures/cluster_elbow.png", grafico_elbow, width = 8, height = 5, bg = "white")
 
 grafico_silhouette_k <- fviz_nbclust(pca_scores_retidos, kmeans, method = "silhouette") +
   labs(title = "Silhouette médio por número de clusters (K-Means)")
-ggsave("outputs/figures/cluster_silhouette_k.png", grafico_silhouette_k, width = 8, height = 5)
+ggsave("outputs/figures/cluster_silhouette_k.png", grafico_silhouette_k, width = 8, height = 5, bg = "white")
 
 message("Gráficos de seleção de k salvos em outputs/figures/cluster_elbow.png e cluster_silhouette_k.png")
 
@@ -243,7 +243,7 @@ grafico_clusters <- fviz_cluster(kmeans_resultado, data = pca_scores_retidos,
                                   geom = "point", pointsize = 2,
                                   ellipse.type = "convex", repel = TRUE,
                                   main = "Clusters de países (K-Means, espaço PC1 x PC2)")
-ggsave("outputs/figures/cluster_visualizacao.png", grafico_clusters, width = 9, height = 7)
+ggsave("outputs/figures/cluster_visualizacao.png", grafico_clusters, width = 9, height = 7, bg = "white")
 
 # -----------------------------------------------------------------------
 # E. Perfil de cada cluster

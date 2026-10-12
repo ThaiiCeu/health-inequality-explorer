@@ -71,7 +71,7 @@ grafico_cobertura <- ggplot(cobertura_longa, aes(x = ano, y = n, color = indicad
   ) +
   theme_minimal()
 
-ggsave("outputs/figures/cobertura_por_ano.png", grafico_cobertura, width = 10, height = 6)
+ggsave("outputs/figures/cobertura_por_ano.png", grafico_cobertura, width = 10, height = 6, bg = "white")
 message("Gráfico de cobertura salvo em outputs/figures/cobertura_por_ano.png")
 
 # Sugestão automática: ano com maior número de países tendo os 7
@@ -181,7 +181,7 @@ grafico_hist_expectativa <- ggplot(dados_corte, aes(x = expectativa_vida)) +
   labs(title = "Distribuição da expectativa de vida ao nascer",
        x = "Expectativa de vida (anos)", y = "Número de países") +
   theme_minimal()
-ggsave("outputs/figures/hist_expectativa_vida.png", grafico_hist_expectativa, width = 8, height = 5)
+ggsave("outputs/figures/hist_expectativa_vida.png", grafico_hist_expectativa, width = 8, height = 5, bg = "white")
 
 grafico_hist_pib <- ggplot(dados_corte, aes(x = pib_per_capita_ppp)) +
   geom_histogram(bins = 30, fill = "#378ADD", color = "white") +
@@ -189,7 +189,7 @@ grafico_hist_pib <- ggplot(dados_corte, aes(x = pib_per_capita_ppp)) +
   labs(title = "Distribuição do PIB per capita (PPP)",
        x = "PIB per capita (US$ PPP)", y = "Número de países") +
   theme_minimal()
-ggsave("outputs/figures/hist_pib_per_capita.png", grafico_hist_pib, width = 8, height = 5)
+ggsave("outputs/figures/hist_pib_per_capita.png", grafico_hist_pib, width = 8, height = 5, bg = "white")
 
 message("Histogramas salvos em outputs/figures/hist_expectativa_vida.png e hist_pib_per_capita.png")
 
@@ -221,7 +221,7 @@ grafico_dispersao <- ggplot(dados_corte, aes(x = pib_per_capita_ppp, y = expecta
   ) +
   theme_minimal()
 
-ggsave("outputs/figures/dispersao_expectativa_pib.png", grafico_dispersao, width = 10, height = 6)
+ggsave("outputs/figures/dispersao_expectativa_pib.png", grafico_dispersao, width = 10, height = 6, bg = "white")
 message("Gráfico de dispersão salvo em outputs/figures/dispersao_expectativa_pib.png")
 
 # -----------------------------------------------------------------------
@@ -305,7 +305,7 @@ grafico_boxplot_regiao <- ggplot(dados_corte |> filter(!is.na(expectativa_vida))
   ) +
   theme_minimal()
 
-ggsave("outputs/figures/boxplot_expectativa_regiao.png", grafico_boxplot_regiao, width = 9, height = 6)
+ggsave("outputs/figures/boxplot_expectativa_regiao.png", grafico_boxplot_regiao, width = 9, height = 6, bg = "white")
 message("Boxplot por região salvo em outputs/figures/boxplot_expectativa_regiao.png")
 
 # -----------------------------------------------------------------------
@@ -342,7 +342,7 @@ grafico_evolucao <- ggplot(evolucao_regional, aes(x = ano, y = media_regional, c
   ) +
   theme_minimal()
 
-ggsave("outputs/figures/evolucao_expectativa_regiao.png", grafico_evolucao, width = 10, height = 6)
+ggsave("outputs/figures/evolucao_expectativa_regiao.png", grafico_evolucao, width = 10, height = 6, bg = "white")
 message("Gráfico de evolução temporal salvo em outputs/figures/evolucao_expectativa_regiao.png")
 
 # -----------------------------------------------------------------------
@@ -378,7 +378,7 @@ grafico_dispersao_mortalidade <- ggplot(dados_corte, aes(x = pib_per_capita_ppp,
   ) +
   theme_minimal()
 
-ggsave("outputs/figures/dispersao_mortalidade_pib.png", grafico_dispersao_mortalidade, width = 10, height = 6)
+ggsave("outputs/figures/dispersao_mortalidade_pib.png", grafico_dispersao_mortalidade, width = 10, height = 6, bg = "white")
 message("Gráfico de dispersão (mortalidade infantil) salvo em outputs/figures/dispersao_mortalidade_pib.png")
 
 message("\nAnálise exploratória (completa) concluída. Reveja os gráficos em outputs/figures/ antes de seguirmos para a Fase 6 (análise estatística).")
