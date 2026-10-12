@@ -291,18 +291,33 @@ write_csv(perfil_clusters, "outputs/tables/perfil_clusters.csv")
 # geral sobre o país.
 #
 # IMPORTANTE: os números dos clusters (1, 2, 3, 4) vêm da atribuição
-# arbitrária do K-Means — não têm ordem natural. O mapeamento abaixo
-# foi construído olhando a tabela perfil_clusters impressa acima;
-# se você rodar o script de novo e os números mudarem (K-Means pode
-# reordenar os índices entre execuções mesmo com o mesmo agrupamento),
-# reconfira a tabela antes de usar estes rótulos.
+# arbitrária do K-Means — não têm ordem natural, e mudam entre execuções
+# mesmo com o mesmo agrupamento (já aconteceu neste projeto: um rótulo
+# atribuído "pelo número" acabou no cluster errado depois de rodar o
+# pipeline de novo). Por isso os rótulos NÃO são atribuídos por número:
+# são atribuídos pela POSIÇÃO do cluster no ranking de expectativa de
+# vida média (perfil_clusters já está ordenado do maior para o menor),
+# o que independe da numeração. O ranking foi conferido contra a tabela
+# acima na versão original da análise: o grupo de maior expectativa de
+# vida é o de "alta longevidade", e assim por diante.
 
-rotulos_cluster <- c(
-  "4" = "Alta longevidade e baixa mortalidade infantil",
-  "3" = "Transição intermediária de desenvolvimento",
-  "1" = "Mortalidade infantil elevada, baixa prevalência de obesidade",
-  "2" = "Mortalidade infantil muito elevada, indicadores de renda mais baixos"
+nomes_por_posicao <- c(
+  "Alta longevidade e baixa mortalidade infantil",
+  "Transição intermediária de desenvolvimento",
+  "Mortalidade infantil elevada, baixa prevalência de obesidade",
+  "Mortalidade infantil muito elevada, indicadores de renda mais baixos"
 )
+stopifnot(nrow(perfil_clusters) == length(nomes_por_posicao))
+
+rotulos_cluster <- setNames(nomes_por_posicao, as.character(perfil_clusters$cluster))
+
+# Checagem de sanidade: os dois grupos de menor expectativa de vida devem
+# ter obesidade menor que a dos dois primeiros (padrão da transição
+# epidemiológica documentado em METODOLOGIA.md, Seção 8). Se não, os
+# rótulos descritivos precisam ser revistos manualmente.
+if (max(perfil_clusters$obesidade_media[3:4]) >= min(perfil_clusters$obesidade_media[1:2])) {
+  warning("Padrão de obesidade diferente do esperado — reconfira os rótulos dos clusters antes de usar.")
+}
 
 perfil_clusters <- perfil_clusters |>
   mutate(nome_cluster = rotulos_cluster[as.character(cluster)]) |>

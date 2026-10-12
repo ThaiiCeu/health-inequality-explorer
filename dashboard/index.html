@@ -115,6 +115,41 @@
       </div>
 
       <div class="cluster-grid" id="cluster-grid"></div>
+
+      <div class="heatmap-section">
+        <h3 class="heatmap-title">As 6 variáveis, país por país</h3>
+        <p class="heatmap-lede">O gráfico acima resume cada país em 2 dimensões (PC1/PC2). Esta matriz mostra as 6 variáveis originais lado a lado — cor = quanto o país está acima (verde) ou abaixo (laranja) da média nesse indicador, já na mesma transformação usada no PCA. Passe o mouse sobre uma linha para ver os valores.</p>
+        <div class="heatmap-legend" id="heatmap-legend"></div>
+        <div class="heatmap-panel" id="heatmap-panel"></div>
+      </div>
+
+      <div class="proj-section">
+        <h3 class="heatmap-title">Comparar técnicas de projeção</h3>
+        <p class="heatmap-lede">Os mesmos 159 países projetados em 2 dimensões por três técnicas — PCA, t-SNE e UMAP — e coloridos pelos grupos de diferentes algoritmos de clusterização. Troque o algoritmo para ver quanto a "formação de grupos" depende do método, e destaque um país para achá-lo nas três projeções. Os eixos de t-SNE e UMAP não têm interpretação: só a vizinhança local importa.</p>
+        <div class="proj-controls">
+          <div class="proj-control">
+            <span class="proj-control-label">Visualização</span>
+            <div class="filter-chips" id="proj-modo">
+              <button class="filter-chip active" data-modo="lado">Lado a lado</button>
+              <button class="filter-chip" data-modo="pca">PCA</button>
+              <button class="filter-chip" data-modo="tsne">t-SNE</button>
+              <button class="filter-chip" data-modo="umap">UMAP</button>
+            </div>
+          </div>
+          <div class="proj-control">
+            <label class="proj-control-label" for="proj-algoritmo">Colorir por</label>
+            <select id="proj-algoritmo"></select>
+          </div>
+          <div class="proj-control">
+            <label class="proj-control-label" for="proj-destaque">Destacar país</label>
+            <select id="proj-destaque"><option value="">Nenhum</option></select>
+          </div>
+        </div>
+        <div class="proj-grid proj-grid-lado" id="proj-grid"></div>
+        <div class="pca-legend" id="proj-legenda"></div>
+        <div class="proj-metricas" id="proj-metricas"></div>
+        <p class="proj-nota" id="proj-nota"></p>
+      </div>
     </div>
   </section>
 
@@ -302,6 +337,8 @@
 <script src="js/main.js"></script>
 <script src="js/explorer.js"></script>
 <script src="js/profiles.js"></script>
+<script src="js/heatmap.js"></script>
+<script src="js/projections.js"></script>
 <script src="js/regression.js"></script>
 <script src="js/expected.js"></script>
 <script src="js/map.js"></script>

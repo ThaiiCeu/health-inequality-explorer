@@ -205,6 +205,84 @@ write_json(serie_temporal_final, "dashboard/data/serie_temporal.json", pretty = 
 message(sprintf("serie_temporal.json salvo — %d países.", length(serie_temporal_final)))
 
 # -----------------------------------------------------------------------
+# G. heatmap.json — matriz país × indicador (técnica pixel-oriented)
+# -----------------------------------------------------------------------
+# PERGUNTA: o scatter de PCA (painel acima) mostra os países em só 2
+# dimensões (PC1/PC2) — bom para ver agrupamento, mas esconde qual
+# variável original está "puxando" cada país para onde está. Uma matriz
+# país × indicador, com cada célula colorida pelo valor padronizado
+# (z-score), resolve isso: dá para ver as 6 variáveis originais de cada
+# país lado a lado, na mesma tela, sem perder a ordenação por cluster.
+# Essa é a técnica "pixel-oriented"/matricial de visualização
+# multivariada (cada célula = 1 marca visual = 1 valor), complementar à
+# projeção geométrica que o scatter de PCA já oferece.
+#
+# Z-score (não valor bruto): PIB per capita e mortalidade infantil estão
+# em escalas muito diferentes (milhares de dólares vs. taxa por 1.000) —
+# sem padronizar, a paleta de cor ficaria dominada pela variável de
+# maior magnitude numérica. As mesmas transformações log usadas na
+# Fase 7 (PCA) são aplicadas aqui antes de padronizar, para manter a
+# matriz consistente com a análise que a gerou.
+#
+# ORDENAÇÃO: por cluster e, dentro de cada cluster, por expectativa de
+# vida decrescente — facilita ver se o padrão de cor "quebra" de forma
+# limpa nas fronteiras entre clusters ou se a transição é gradual.
+
+VARS_PERFIL_HEATMAP <- c("expectativa_vida", "mortalidade_infantil", "prevalencia_obesidade",
+                          "pib_per_capita_ppp", "gasto_saude_pc_ppp", "prevalencia_tabagismo")
+
+ROTULOS_HEATMAP <- c(
+  expectativa_vida = "Expectativa de vida",
+  mortalidade_infantil = "Mortalidade infantil (log)",
+  prevalencia_obesidade = "Obesidade",
+  pib_per_capita_ppp = "PIB per capita (log)",
+  gasto_saude_pc_ppp = "Gasto em saúde (log)",
+  prevalencia_tabagismo = "Tabagismo"
+)
+
+dados_heatmap_base <- dados_com_cluster |>
+  mutate(
+    mortalidade_infantil = log(mortalidade_infantil),
+    pib_per_capita_ppp = log(pib_per_capita_ppp),
+    gasto_saude_pc_ppp = log(gasto_saude_pc_ppp)
+  )
+
+# Padroniza cada indicador (z-score) separadamente, preservando o
+# cluster e nome para reordenar a matriz depois.
+matriz_z <- dados_heatmap_base |>
+  select(all_of(VARS_PERFIL_HEATMAP)) |>
+  scale() |>
+  as.data.frame()
+names(matriz_z) <- paste0(names(matriz_z), "_z")
+
+dados_heatmap <- dados_com_cluster |>
+  select(iso3 = pais_iso3, nome = pais_nome, cluster = cluster, nome_cluster = nome_cluster,
+         expectativa_vida) |>
+  bind_cols(matriz_z) |>
+  mutate(cluster = as.integer(as.character(cluster))) |>
+  arrange(cluster, desc(expectativa_vida))
+
+heatmap_export <- list(
+  indicadores = lapply(VARS_PERFIL_HEATMAP, function(v) {
+    list(chave = v, rotulo = unname(ROTULOS_HEATMAP[v]))
+  }),
+  paises = lapply(seq_len(nrow(dados_heatmap)), function(i) {
+    linha <- dados_heatmap[i, ]
+    list(
+      iso3 = linha$iso3,
+      nome = linha$nome,
+      cluster = linha$cluster,
+      nome_cluster = linha$nome_cluster,
+      valores = round(as.numeric(linha[paste0(VARS_PERFIL_HEATMAP, "_z")]), 2)
+    )
+  })
+)
+
+write_json(heatmap_export, "dashboard/data/heatmap.json", pretty = FALSE, auto_unbox = TRUE)
+message(sprintf("heatmap.json salvo — %d países x %d indicadores (z-score).",
+                 nrow(dados_heatmap), length(VARS_PERFIL_HEATMAP)))
+
+# -----------------------------------------------------------------------
 # Resumo final
 # -----------------------------------------------------------------------
 

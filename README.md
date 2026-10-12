@@ -4,7 +4,9 @@ Análise de dados em Estatística, R, Machine Learning e visualização interati
 
 **[→ Repositório no GitHub](https://github.com/ThaiiCeu/health-inequality-explorer)**
 
-*(O dashboard interativo roda localmente — ver "Como reproduzir a análise" abaixo.)*
+**[→ Dashboard interativo](https://thaiiceu.github.io/health-inequality-explorer/)** (publicado via GitHub Pages)
+
+*(Também dá para rodar localmente — ver "Como reproduzir a análise" abaixo.)*
 
 ---
 
@@ -47,6 +49,7 @@ Coleta reproduzível via API (janela 2000–2022), com busca de indicadores por 
 - **Amostra**: corte transversal de **2015**, 159 países (núcleo de 7 indicadores com melhor cobertura simultânea).
 - **Regressão múltipla**: expectativa de vida em função de PIB per capita, obesidade, tabagismo, população e gasto em saúde (todos com transformação log onde havia assimetria). R² ajustado = 0,728. Diagnóstico completo (VIF, normalidade, heterocedasticidade) com correção via erros-padrão robustos (HC3).
 - **PCA e clusterização**: 2 componentes principais retidos (81,4% da variância); 4 clusters via K-Means, validados contra clusterização hierárquica.
+- **Projeções e algoritmos de clusterização**: PCA, t-SNE e UMAP comparados quanto à preservação de vizinhança (trustworthiness, continuity), consistência de vizinhos do mesmo grupo e silhueta 2D, com análise de sensibilidade a hiperparâmetros e a 10 sementes. Os grupos são definidos no espaço original padronizado (6D) por cinco algoritmos (K-Means, Ward, PAM, GMM, HDBSCAN), para não favorecer o PCA por circularidade. Inclui análise de remoção de variáveis e de ampliação com as variáveis secundárias.
 - **Esperado vs. observado**: resíduos studentizados do modelo de regressão, classificados por desvio-padrão (critério estatístico, não corte arbitrário).
 
 Documentação metodológica completa — com todas as decisões, números e limitações — em [`docs/METODOLOGIA.md`](docs/METODOLOGIA.md).
@@ -55,7 +58,7 @@ Documentação metodológica completa — com todas as decisões, números e lim
 
 ## Tecnologias
 
-**Análise de dados**: R (tidyverse, httr2, jsonlite, broom, performance, sandwich, lmtest, factoextra, cluster, corrplot)
+**Análise de dados**: R (tidyverse, httr2, jsonlite, broom, performance, sandwich, lmtest, factoextra, cluster, corrplot, Rtsne, uwot, mclust, dbscan)
 **Dashboard**: HTML, CSS, JavaScript, [D3.js](https://d3js.org/) (mapa), [Chart.js](https://www.chartjs.org/) (gráficos)
 **Arquitetura**: R processa e exporta dados em JSON estático → front-end HTML/CSS/JS consome via `fetch()` → hospedável gratuitamente no GitHub Pages (sem servidor rodando)
 
@@ -68,6 +71,8 @@ health-inequality-explorer/
 │
 ├── README.md
 ├── .gitignore
+├── renv.lock           # versões travadas dos pacotes R (reprodutibilidade)
+├── renv/               # infraestrutura do renv (commitado, exceto renv/library/)
 │
 ├── data/
 │   ├── raw/            # dados brutos da API (não versionado — ver .gitignore)
@@ -76,26 +81,30 @@ health-inequality-explorer/
 │
 ├── R/
 │   ├── funcoes.R                  # funções reutilizáveis (coleta, limpeza)
+│   ├── 00_configurar_renv.R       # roda uma vez para travar versões de pacote
 │   ├── 01_coleta_dados.R
 │   ├── 02_limpeza_dados.R
 │   ├── 03_analise_exploratoria.R
 │   ├── 04_analise_estatistica.R
 │   ├── 05_pca_clusterizacao.R
 │   ├── 06_modelagem.R             # esperado vs. observado
-│   └── 07_exportacao_dashboard.R
+│   ├── 07_exportacao_dashboard.R
+│   ├── 08_sensibilidade_ano.R     # checagem de robustez: 2010 vs. 2015
+│   └── 09_projecoes_clusterizacao.R  # PCA vs. t-SNE vs. UMAP + 5 algoritmos de clusterização
 │
 ├── dashboard/
 │   ├── index.html
 │   ├── css/style.css
-│   ├── js/                        # main, explorer, profiles, regression, expected, map, methodology
-│   └── data/                      # JSONs exportados pelo R (gerados por 07_exportacao_dashboard.R)
+│   ├── js/                        # main, explorer, profiles, heatmap, projections, regression, expected, map, methodology
+│   └── data/                      # JSONs exportados pelo R (gerados por 07 e 09)
 │
 ├── outputs/
 │   ├── figures/        # gráficos gerados nas Fases 5-8
 │   └── tables/          # tabelas de resultados (regressão, clusters, etc.)
 │
 └── docs/
-    └── METODOLOGIA.md   # documentação metodológica completa
+    ├── METODOLOGIA.md   # documentação metodológica completa
+    └── ARTIGO.md        # rascunho do artigo (comparação de projeções)
 ```
 
 ---
@@ -111,12 +120,31 @@ health-inequality-explorer/
 
 ## Como reproduzir a análise
 
+**Opção A — com renv (recomendado, garante as mesmas versões de pacote que foram usadas na análise original):**
+
+```r
+install.packages("renv")
+renv::restore()   # reinstala exatamente as versões travadas em renv.lock
+
+source("R/01_coleta_dados.R")        # coleta via API (precisa de internet)
+source("R/02_limpeza_dados.R")
+source("R/03_analise_exploratoria.R")
+source("R/04_analise_estatistica.R")
+source("R/05_pca_clusterizacao.R")
+source("R/06_modelagem.R")
+source("R/07_exportacao_dashboard.R") # gera os JSONs do dashboard
+source("R/08_sensibilidade_ano.R")
+source("R/09_projecoes_clusterizacao.R") # projeções + clusterização (~20 s)
+```
+
+**Opção B — sem renv (mais simples, mas sem garantia de versão):**
+
 ```r
 # 1. Instale os pacotes necessários
 install.packages(c("httr2", "jsonlite", "dplyr", "readr", "purrr", "stringr",
                     "tidyr", "ggplot2", "corrplot", "scales", "broom",
                     "performance", "sandwich", "lmtest", "factoextra",
-                    "cluster", "ggrepel"))
+                    "cluster", "ggrepel", "Rtsne", "uwot", "mclust", "dbscan"))
 
 # 2. Rode os scripts em ordem, a partir da raiz do repositório
 source("R/01_coleta_dados.R")        # coleta via API (precisa de internet)
@@ -126,6 +154,8 @@ source("R/04_analise_estatistica.R")
 source("R/05_pca_clusterizacao.R")
 source("R/06_modelagem.R")
 source("R/07_exportacao_dashboard.R") # gera os JSONs do dashboard
+source("R/08_sensibilidade_ano.R")
+source("R/09_projecoes_clusterizacao.R") # projeções + clusterização (~20 s)
 ```
 
 Para ver o dashboard localmente:
@@ -137,6 +167,8 @@ python3 -m http.server 8000
 ```
 
 (`fetch()` não funciona abrindo o `index.html` direto como arquivo — precisa de um servidor local ou do GitHub Pages.)
+
+**Sem R e sem análise nenhuma:** os JSONs do dashboard já estão versionados em `dashboard/data/`. Basta clonar o repositório (ou baixar o ZIP em *Code → Download ZIP*), ter Python instalado e rodar os três comandos acima. No Windows, se `python3` não funcionar, use `python -m http.server 8000`. Alternativa: abrir a pasta `dashboard/` no VS Code e usar a extensão *Live Server*.
 
 ---
 

@@ -1,160 +1,160 @@
 pais_iso3,pais_nome,regiao,nome_cluster,expectativa_vida,expectativa_esperada,residuo_bruto,residuo_studentizado,classificacao
-LKA,Sri Lanka,South Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",76.44590803,71.70722629828929,4.738681731710713,1.2150375107144062,Acima do esperado
-TUN,Tunisia,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",76.786270149999993,72.57828322776558,4.2079869222344115,1.0718506878900493,Acima do esperado
-MEX,Mexico,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",75.93967708,74.90080982848501,1.0388672515149864,0.26794719156973235,Dentro do esperado
-LUX,Luxembourg,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",82.3849065,83.74235976737924,-1.3574532673792419,-0.35439604712028894,Dentro do esperado
-ITA,Italy,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",82.20433624,80.05185784199696,2.1524783980030406,0.551119496854401,Dentro do esperado
-MAR,Morocco,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",73.26259745,69.32715426315495,3.935443186845049,1.0045239973189544,Acima do esperado
-URY,Uruguay,Latin America & Caribbean,"Mortalidade infantil elevada, baixa prevalência de obesidade",77.09925201,76.74765498931393,0.35159702068607146,0.08934710830986234,Dentro do esperado
-TZA,Tanzania,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,65.15719683,62.96981110538331,2.1873857246166963,0.5617067419527456,Dentro do esperado
-HTI,Haiti,Latin America & Caribbean,Alta longevidade e baixa mortalidade infantil,62.5149437,63.798446038211104,-1.2835023382111004,-0.32849396677775305,Dentro do esperado
-AZE,Azerbaijan,Europe & Central Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",73.62700051,73.76921628181985,-0.14221577181984912,-0.036213472328425575,Dentro do esperado
-MDV,Maldives,South Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",77.25297582,75.01224934529505,2.2407264747049567,0.5814819131658049,Dentro do esperado
-KWT,Kuwait,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil elevada, baixa prevalência de obesidade",81.44722022,78.91853204009544,2.528688179904563,0.6549711233809529,Dentro do esperado
-COL,Colombia,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",77.34484367,73.14179653368522,4.20304713631478,1.0788398714789733,Acima do esperado
-SLV,El Salvador,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",72.73292352,70.17851631026835,2.55440720973165,0.6559012216151902,Dentro do esperado
-MLT,Malta,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil elevada, baixa prevalência de obesidade",81.679761010000007,79.31593472256192,2.363826287438087,0.6073331813188575,Dentro do esperado
-PAK,Pakistan,"Middle East, North Africa, Afghanistan & Pakistan",Alta longevidade e baixa mortalidade infantil,65.69975806,66.10095257019266,-0.40119451019266705,-0.10388349112773723,Dentro do esperado
-GAB,Gabon,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",64.00078432,71.67668325285236,-7.675898932852363,-2.01587743097715,Abaixo do esperado
-ZMB,Zambia,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,60.4135173,64.54638742415408,-4.132870124154074,-1.0570436628851192,Abaixo do esperado
-JPN,Japan,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",83.99957263,80.37882245320765,3.620750176792356,0.9442663599407018,Dentro do esperado
-AUT,Austria,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",80.98621911,81.97740796125933,-0.9911888512593379,-0.25480934892292373,Dentro do esperado
-CPV,Cabo Verde,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",74.82831017,67.52741753679268,7.300892633207312,1.899994844515679,Acima do esperado
-UZB,Uzbekistan,Europe & Central Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",69.42591804,69.12574084514574,0.30017719485425687,0.0764497425798546,Dentro do esperado
-WSM,Samoa,East Asia & Pacific,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",70.01944065,68.2236260165601,1.7958146334399032,0.48479841631232196,Dentro do esperado
-UGA,Uganda,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,64.2155816,62.71465922561813,1.5009223743818652,0.38488710034708346,Dentro do esperado
-SLE,Sierra Leone,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,56.88673236,64.88743643268248,-8.000704072682474,-2.126048953885926,Abaixo do esperado
-BGR,Bulgaria,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",74.56358707,77.10795233633884,-2.5443652663388434,-0.6527287288061616,Dentro do esperado
-COD,"Congo, Dem. Rep.",Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,59.96244072,58.90115418513274,1.061286534867257,0.27451382911516387,Dentro do esperado
-BWA,Botswana,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",62.04575871,73.05776245154352,-11.012003741543523,-2.8751657035397487,Abaixo do esperado
-GRC,Greece,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",80.41608244,78.58269316426751,1.8333892757324861,0.4687092442527743,Dentro do esperado
-DNK,Denmark,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",80.59412958,81.15942390947647,-0.5652943294764725,-0.14546447261979,Dentro do esperado
-JAM,Jamaica,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",72.28943851,70.10716269455453,2.1822758154454647,0.557900456597471,Dentro do esperado
-CYP,Cyprus,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",81.80149333,78.54634528219157,3.255148047808433,0.8353234215874756,Dentro do esperado
-BLR,Belarus,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",73.73950531,76.34720741058605,-2.607702100586053,-0.6653759344853731,Dentro do esperado
-KAZ,Kazakhstan,Europe & Central Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",71.97923102,75.64528119279169,-3.666050172791685,-0.9480210712801377,Dentro do esperado
-BEL,Belgium,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",80.70631194,81.31786992136341,-0.6115579813634042,-0.15654647776932265,Dentro do esperado
-MLI,Mali,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,60.12125985,62.01806949260166,-1.89680964260166,-0.486199635083229,Dentro do esperado
-POL,Poland,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",77.27808527,77.67115812421315,-0.39307285421314475,-0.10004061976834269,Dentro do esperado
-HUN,Hungary,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",75.5700037,77.99632459930622,-2.4263208993062193,-0.6188538977546499,Dentro do esperado
-LBY,Libya,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",72.65332031,73.10529794354154,-0.45197763354154574,-0.11585563449269955,Dentro do esperado
-BHR,Bahrain,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil elevada, baixa prevalência de obesidade",75.75082454,78.60674002900657,-2.855915489006577,-0.7333768397967041,Dentro do esperado
-BFA,Burkina Faso,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,60.94298433,61.80049361473404,-0.8575092847340358,-0.21956609684915562,Dentro do esperado
-GHA,Ghana,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,64.33720534,66.16355024023473,-1.82634490023473,-0.4684609520901689,Dentro do esperado
-SYC,Seychelles,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",73.16237091,74.28599182608015,-1.1236209160801423,-0.2916159724157141,Dentro do esperado
-PRT,Portugal,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",80.89189476,78.61746071746741,2.27443404253259,0.5799350205337082,Dentro do esperado
-NOR,Norway,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",81.99495023,82.60448192236723,-0.6095316923672272,-0.15659217857167437,Dentro do esperado
-BDI,Burundi,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,62.7069542,57.89118429295283,4.815769907047169,1.2526267254279742,Acima do esperado
-SEN,Senegal,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,67.3624183,63.70101619962398,3.661402100376023,0.9394878190212584,Dentro do esperado
-QAT,Qatar,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil elevada, baixa prevalência de obesidade",77.79140376,82.03597933690517,-4.244575576905177,-1.114713879770631,Abaixo do esperado
-LCA,St. Lucia,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",76.39243252,72.5085494638801,3.883883056119899,1.0077394336272256,Acima do esperado
-HND,Honduras,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",69.52898147,67.58010732994293,1.9488741400570717,0.4987936438167948,Dentro do esperado
-PNG,Papua New Guinea,East Asia & Pacific,Transição intermediária de desenvolvimento,66.00102041,65.7892837792748,0.21173663072519844,0.05645671383501559,Dentro do esperado
-ESP,Spain,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",82.32940416,80.13849376103036,2.190910398969635,0.5606459490630453,Dentro do esperado
-IND,India,South Asia,Transição intermediária de desenvolvimento,69.3779891,69.15508066207025,0.22290843792974613,0.05839873448255481,Dentro do esperado
-FRA,France,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",81.90513823,81.7444198425612,0.16071838743880562,0.041484265045657505,Dentro do esperado
-BEN,Benin,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,62.62662,62.04912632626419,0.5774936737358161,0.14822237703623434,Dentro do esperado
-NZL,New Zealand,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",81.31375727,78.6565445447754,2.6572127252245963,0.6813098489763345,Dentro do esperado
-EGY,"Egypt, Arab Rep.","Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",70.05641038,72.57192125863278,-2.5155108786327816,-0.6583075018971883,Dentro do esperado
-VNM,Viet Nam,East Asia & Pacific,Transição intermediária de desenvolvimento,73.03125783,70.47560963072038,2.5556481992796165,0.6558305078303824,Dentro do esperado
-AFG,Afghanistan,"Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,60.32951348,65.68824008453011,-5.358726604530105,-1.3875376929470498,Abaixo do esperado
-MUS,Mauritius,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",74.12593279,74.42562801205455,-0.29969522205455235,-0.07640626596607353,Dentro do esperado
-GTM,Guatemala,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",72.0454314,70.4395839372792,1.6058474627208028,0.40884771168162487,Dentro do esperado
-BRA,Brazil,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",74.711289,74.66451490094956,0.04677409905043817,0.012040449425225077,Dentro do esperado
-SRB,Serbia,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",75.27946837,75.94701312983564,-0.6675447598356357,-0.17112489367320127,Dentro do esperado
-TON,Tonga,East Asia & Pacific,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",72.46352791,67.65248663420438,4.811041275795617,1.3480810107735157,Acima do esperado
-MDA,Moldova,Europe & Central Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",71.14655162,71.78946788891693,-0.6429162689169345,-0.1632279431160972,Dentro do esperado
-VUT,Vanuatu,East Asia & Pacific,Transição intermediária de desenvolvimento,66.79010699,64.41240837484274,2.3776986151572572,0.6143443006234799,Dentro do esperado
-CHN,China,East Asia & Pacific,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",76.5103545,73.73481203271723,2.7755424672827758,0.722724808523786,Dentro do esperado
-JOR,Jordan,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",78.50941007,72.32501362516876,6.184396444831236,1.6074655850418476,Acima do esperado
-PAN,Panama,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",78.14484121,75.6046120785372,2.5402291314627945,0.6535677261347999,Dentro do esperado
-PRY,Paraguay,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",75.16683709,72.04032258849084,3.1265145015091633,0.7994634418285586,Dentro do esperado
-NPL,Nepal,South Asia,Transição intermediária de desenvolvimento,69.77673885,66.7095681338549,3.0671707161450996,0.7929999904574845,Dentro do esperado
-RUS,Russian Federation,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",71.29790344,78.0697031836993,-6.7717997436993045,-1.7612446966537425,Abaixo do esperado
-NLD,Netherlands,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",81.28069061,81.71393287789458,-0.43324226789458464,-0.11119332841413927,Dentro do esperado
-CHL,Chile,Latin America & Caribbean,"Mortalidade infantil elevada, baixa prevalência de obesidade",80.12508082,77.69247734248563,2.4326034775143626,0.6233137426885723,Dentro do esperado
-BRN,Brunei Darussalam,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",76.55761257,78.94909293661925,-2.3914803666192483,-0.6340957302309024,Dentro do esperado
-HRV,Croatia,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",77.60709528,77.40556924419012,0.20152603580987716,0.051352567731938005,Dentro do esperado
-ISL,Iceland,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",82.12605142,79.5511221043231,2.574929315676897,0.6700983087624051,Dentro do esperado
-MMR,Myanmar,East Asia & Pacific,Transição intermediária de desenvolvimento,67.42672255,69.67934942302819,-2.2526268730281913,-0.5931181672516298,Dentro do esperado
-MKD,North Macedonia,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",75.34082067,75.2191546531556,0.12166601684440081,0.031191964060702175,Dentro do esperado
-TCD,Chad,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,57.84629101,62.00965458676424,-4.16336357676424,-1.0729123150183941,Abaixo do esperado
-STP,Sao Tome and Principe,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,70.55687146,64.91231283042228,5.644558629577716,1.479749516972731,Acima do esperado
-LSO,Lesotho,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,48.83813559,65.57841341667147,-16.740277826671466,-4.630470583485722,Abaixo do esperado
-KEN,Kenya,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,64.29968929,65.74019716146597,-1.440507871465968,-0.3677898244461014,Dentro do esperado
-ISR,Israel,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil elevada, baixa prevalência de obesidade",81.91113219,78.77168530501018,3.139446884989823,0.7997318890699606,Dentro do esperado
-COM,Comoros,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,67.42647275,63.58985781151403,3.8366149384859725,0.988389591558793,Dentro do esperado
-MYS,Malaysia,East Asia & Pacific,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",74.27826363,75.46898117719432,-1.1907175471943248,-0.3037436044350042,Dentro do esperado
-SVK,Slovak Republic,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",76.59625031,78.0270054821619,-1.430755172161895,-0.3639787854354842,Dentro do esperado
-PER,Peru,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",80.33747677,72.17851710496056,8.158959665039433,2.104127311475523,Acima do esperado
-FIN,Finland,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",81.19884704,80.59596186313051,0.6028851768694921,0.15392551326021803,Dentro do esperado
-ZWE,Zimbabwe,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,57.4934476,66.12527083940127,-8.631823239401264,-2.2318714027557376,Abaixo do esperado
-CZE,Czechia,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",78.48257933,79.3441412985642,-0.8615619685642031,-0.21930745876733324,Dentro do esperado
-KIR,Kiribati,East Asia & Pacific,Transição intermediária de desenvolvimento,61.68537375,65.2163401812955,-3.5309664312954965,-0.9626230292901007,Dentro do esperado
-COG,"Congo, Rep.",Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,62.05475682,66.84688942277286,-4.79213260277286,-1.265421576315441,Abaixo do esperado
-MWI,Malawi,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,61.82512095,60.611493125305955,1.2136278246940435,0.31285989113600854,Dentro do esperado
-SVN,Slovenia,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",80.46318817,78.1464989355728,2.3166892344272014,0.593121649381473,Dentro do esperado
-EST,Estonia,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",77.63428878,78.12475538712978,-0.4904666071297754,-0.1253994773431904,Dentro do esperado
-AUS,Australia,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",82.287472,80.45645531863623,1.8310166813637636,0.47036873593425776,Dentro do esperado
-LTU,Lithuania,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",74.36612877,78.32617774071284,-3.9600489707128332,-1.0146310005574832,Abaixo do esperado
-USA,United States,North America,"Mortalidade infantil elevada, baixa prevalência de obesidade",78.61058161,83.19767623889005,-4.587094628890057,-1.2276166731713567,Abaixo do esperado
-ARM,Armenia,Europe & Central Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",74.27859114,73.26640848638169,1.0121826536183107,0.25800990491679965,Dentro do esperado
-CAN,Canada,North America,"Mortalidade infantil elevada, baixa prevalência de obesidade",81.64860674,80.56621528272697,1.082391457273033,0.27803729098386437,Dentro do esperado
-MRT,Mauritania,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,69.45426817,65.79155482779939,3.662713342200618,0.9404153486592446,Dentro do esperado
-MNG,Mongolia,East Asia & Pacific,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",69.246045,72.16261371232837,-2.9165687123283703,-0.7455142747815998,Dentro do esperado
-BLZ,Belize,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",74.30568158,69.66612078635944,4.639560793640555,1.2082433639566306,Acima do esperado
-KOR,"Korea, Rep.",East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",82.40187033,79.36069964816615,3.0411706818338473,0.784401218256376,Dentro do esperado
-SWZ,Eswatini,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,52.11336327,69.5051720305061,-17.391808760506102,-4.785351764312813,Abaixo do esperado
-CIV,Cote d'Ivoire,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,60.9342411,65.40034355096218,-4.466102450962175,-1.147198290821335,Abaixo do esperado
-LAO,Lao PDR,East Asia & Pacific,Transição intermediária de desenvolvimento,66.87363139,67.92407823163708,-1.0504468416370827,-0.27181541545679655,Dentro do esperado
-LBN,Lebanon,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil elevada, baixa prevalência de obesidade",78.43741249,75.28647459206317,3.150937897936828,0.8137030180864435,Dentro do esperado
-CRI,Costa Rica,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",80.57423676,74.09328162269173,6.480955137308271,1.6710720405255453,Acima do esperado
-ECU,Ecuador,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",77.15293465,72.07061750594495,5.082317144055054,1.3030805280866407,Acima do esperado
-LVA,Latvia,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",74.8108617,77.44284775709232,-2.6319860570923197,-0.6753036597396457,Dentro do esperado
-TKM,Turkmenistan,Europe & Central Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",68.83222809,71.23914348100666,-2.406915391006663,-0.6162251073243948,Dentro do esperado
-MOZ,Mozambique,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,55.85530982,60.6410438353174,-4.785734015317395,-1.239037079465459,Abaixo do esperado
-IRN,"Iran, Islamic Rep.","Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",77.27827213,73.45788431828707,3.8203878117129335,0.982842160945265,Dentro do esperado
-LBR,Liberia,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,60.37754989,61.36847972793838,-0.9909298379383813,-0.2602719798701057,Dentro do esperado
-SLB,Solomon Islands,East Asia & Pacific,Transição intermediária de desenvolvimento,65.15166823,64.14865350129517,1.0030147287048266,0.26102005752491314,Dentro do esperado
-MDG,Madagascar,Sub-Saharan Africa,Transição intermediária de desenvolvimento,63.35879155,61.94592137537409,1.4128701746259082,0.36532541426898496,Dentro do esperado
-ETH,Ethiopia,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,67.10395358,60.42019841612861,6.683755163871382,1.7461556239778675,Acima do esperado
-DEU,Germany,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",80.4259243,81.98365333265268,-1.5577290326526736,-0.40054634444303927,Dentro do esperado
-TLS,Timor-Leste,East Asia & Pacific,Transição intermediária de desenvolvimento,67.83593705,68.21053471932507,-0.37459766932506966,-0.0993396594820306,Dentro do esperado
-GMB,"Gambia, The",Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,63.79523685,61.20302297684503,2.592213873154975,0.6677347242158943,Dentro do esperado
-RWA,Rwanda,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,66.96378175,62.75565043048303,4.208131319516966,1.0831214165850862,Acima do esperado
-FJI,Fiji,East Asia & Pacific,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",67.8018416,70.90277302906928,-3.100931429069277,-0.7966589122921147,Dentro do esperado
-NGA,Nigeria,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,61.73359862,67.74285377666685,-6.009255156666846,-1.5774624237477943,Abaixo do esperado
-UKR,Ukraine,Europe & Central Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",72.14894514,73.82445895308653,-1.675513813086539,-0.42721674613732946,Dentro do esperado
-SGP,Singapore,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",82.84921063,81.99082221302562,0.8583884169743783,0.22450369758073582,Dentro do esperado
-GEO,Georgia,Europe & Central Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",72.85013916,74.20088181496362,-1.350742654963625,-0.34506829211784706,Dentro do esperado
-TUR,Turkiye,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",76.68525905,76.5751858872076,0.11007316279240342,0.0283413729445596,Dentro do esperado
-PSE,West Bank and Gaza,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",74.56005234,69.65175867719691,4.908293662803089,1.2790391334650517,Acima do esperado
-OMN,Oman,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",73.77326508,76.22930644786223,-2.456041367862227,-0.6317470567990138,Dentro do esperado
-BGD,Bangladesh,South Asia,Transição intermediária de desenvolvimento,73.19207211,67.47764508507034,5.7144270249296625,1.523310261459379,Acima do esperado
-NER,Niger,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,59.63358442,59.331034331294816,0.30255008870518196,0.07799565795937541,Dentro do esperado
-ARE,United Arab Emirates,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil elevada, baixa prevalência de obesidade",80.71356774,79.75970090525033,0.9538668347496753,0.24681514076676608,Dentro do esperado
-SAU,Saudi Arabia,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil elevada, baixa prevalência de obesidade",76.88889936,79.79495280546146,-2.906053445461467,-0.7513812008193881,Dentro do esperado
-GNB,Guinea-Bissau,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,57.5801364,61.970772844356134,-4.390636444356133,-1.1405686715177445,Abaixo do esperado
-MNE,Montenegro,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",76.86028429,75.87249620612872,0.9877880838712798,0.2550120386680811,Dentro do esperado
-SWE,Sweden,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",81.74239456,81.6860444783533,0.05635008164669841,0.014467821779693394,Dentro do esperado
-PHL,Philippines,East Asia & Pacific,Transição intermediária de desenvolvimento,69.51615532,69.36350252291118,0.15265279708881963,0.03903315322728385,Dentro do esperado
-TGO,Togo,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,61.52164894,62.218483830497945,-0.6968348904979464,-0.17881193834244583,Dentro do esperado
-KHM,Cambodia,East Asia & Pacific,Transição intermediária de desenvolvimento,68.66739766,66.87999717962047,1.7874004803795316,0.4567531843590068,Dentro do esperado
-BHS,"Bahamas, The",Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",72.92357543,75.90236684610936,-2.9787914161093596,-0.7717527065819884,Dentro do esperado
-BIH,Bosnia and Herzegovina,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",76.9957646,74.64145597013162,2.3543086298683846,0.605693348648093,Dentro do esperado
-ARG,Argentina,Latin America & Caribbean,"Mortalidade infantil elevada, baixa prevalência de obesidade",76.5300965,77.6292699446047,-1.099173444604702,-0.2810765816598908,Dentro do esperado
-GBR,United Kingdom,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",80.65863594,80.38880079436726,0.26983514563274014,0.06928417970922357,Dentro do esperado
-ZAF,South Africa,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",63.26267522,73.88136544216327,-10.618690222163274,-2.793256477919299,Abaixo do esperado
-THA,Thailand,East Asia & Pacific,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",76.97043175,73.58096985313597,3.3894618968640344,0.8684970696719837,Dentro do esperado
-GUY,Guyana,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",66.95276619,70.26323442818293,-3.3104682381829207,-0.847152534948572,Dentro do esperado
-ROU,Romania,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",74.90936922,76.84650603833225,-1.9371368183322488,-0.4957246248096616,Dentro do esperado
-BOL,Bolivia,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",71.94895895,70.55741611320357,1.3915428367964324,0.3535369403302688,Dentro do esperado
-KGZ,Kyrgyz Republic,Europe & Central Asia,Transição intermediária de desenvolvimento,71.54340028,67.97148394944693,3.5719163305530657,0.9103939337874644,Dentro do esperado
-IRQ,Iraq,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",71.00605468,71.14076654788917,-0.13471186788916611,-0.035162043570097105,Dentro do esperado
-CHE,Switzerland,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",82.58994495,82.95304059292312,-0.36309564292311336,-0.09401180195948296,Dentro do esperado
-IDN,Indonesia,East Asia & Pacific,Transição intermediária de desenvolvimento,70.53899644,71.51107562681976,-0.9720791868197551,-0.2521086965887495,Dentro do esperado
-BTN,Bhutan,South Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",73.07489389,70.28694638050445,2.7879475094955524,0.7217216946483014,Dentro do esperado
-ALB,Albania,Europe & Central Asia,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",77.76638448,72.62556582783036,5.140818652169642,1.3121366665169085,Acima do esperado
-CMR,Cameroon,Sub-Saharan Africa,Alta longevidade e baixa mortalidade infantil,58.9843954,64.91429988340371,-5.929904483403718,-1.5284174110871502,Abaixo do esperado
-IRL,Ireland,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",81.13790588,82.18115185403241,-1.043245974032402,-0.26656771398520135,Dentro do esperado
-DZA,Algeria,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",76.06909233,73.42677360662452,2.6423187233754817,0.6724172882250236,Dentro do esperado
+LKA,Sri Lanka,South Asia,Transição intermediária de desenvolvimento,76.44590803,71.70722629828929,4.738681731710713,1.2150375107144062,Acima do esperado
+TUN,Tunisia,"Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,76.786270149999993,72.57828322776558,4.2079869222344115,1.0718506878900493,Acima do esperado
+MEX,Mexico,Latin America & Caribbean,Transição intermediária de desenvolvimento,75.93967708,74.90080982848501,1.0388672515149864,0.26794719156973235,Dentro do esperado
+LUX,Luxembourg,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,82.3849065,83.74235976737924,-1.3574532673792419,-0.35439604712028894,Dentro do esperado
+ITA,Italy,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,82.20433624,80.05185784199696,2.1524783980030406,0.551119496854401,Dentro do esperado
+MAR,Morocco,"Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,73.26259745,69.32715426315495,3.935443186845049,1.0045239973189544,Acima do esperado
+URY,Uruguay,Latin America & Caribbean,Alta longevidade e baixa mortalidade infantil,77.09925201,76.74765498931393,0.35159702068607146,0.08934710830986234,Dentro do esperado
+TZA,Tanzania,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",65.15719683,62.96981110538331,2.1873857246166963,0.5617067419527456,Dentro do esperado
+HTI,Haiti,Latin America & Caribbean,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",62.5149437,63.798446038211104,-1.2835023382111004,-0.32849396677775305,Dentro do esperado
+AZE,Azerbaijan,Europe & Central Asia,Transição intermediária de desenvolvimento,73.62700051,73.76921628181985,-0.14221577181984912,-0.036213472328425575,Dentro do esperado
+MDV,Maldives,South Asia,Transição intermediária de desenvolvimento,77.25297582,75.01224934529505,2.2407264747049567,0.5814819131658049,Dentro do esperado
+KWT,Kuwait,"Middle East, North Africa, Afghanistan & Pakistan",Alta longevidade e baixa mortalidade infantil,81.44722022,78.91853204009544,2.528688179904563,0.6549711233809529,Dentro do esperado
+COL,Colombia,Latin America & Caribbean,Transição intermediária de desenvolvimento,77.34484367,73.14179653368522,4.20304713631478,1.0788398714789733,Acima do esperado
+SLV,El Salvador,Latin America & Caribbean,Transição intermediária de desenvolvimento,72.73292352,70.17851631026835,2.55440720973165,0.6559012216151902,Dentro do esperado
+MLT,Malta,"Middle East, North Africa, Afghanistan & Pakistan",Alta longevidade e baixa mortalidade infantil,81.679761010000007,79.31593472256192,2.363826287438087,0.6073331813188575,Dentro do esperado
+PAK,Pakistan,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil muito elevada, indicadores de renda mais baixos",65.69975806,66.10095257019266,-0.40119451019266705,-0.10388349112773723,Dentro do esperado
+GAB,Gabon,Sub-Saharan Africa,Transição intermediária de desenvolvimento,64.00078432,71.67668325285236,-7.675898932852363,-2.01587743097715,Abaixo do esperado
+ZMB,Zambia,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",60.4135173,64.54638742415408,-4.132870124154074,-1.0570436628851192,Abaixo do esperado
+JPN,Japan,East Asia & Pacific,Alta longevidade e baixa mortalidade infantil,83.99957263,80.37882245320765,3.620750176792356,0.9442663599407018,Dentro do esperado
+AUT,Austria,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,80.98621911,81.97740796125933,-0.9911888512593379,-0.25480934892292373,Dentro do esperado
+CPV,Cabo Verde,Sub-Saharan Africa,Transição intermediária de desenvolvimento,74.82831017,67.52741753679268,7.300892633207312,1.899994844515679,Acima do esperado
+UZB,Uzbekistan,Europe & Central Asia,Transição intermediária de desenvolvimento,69.42591804,69.12574084514574,0.30017719485425687,0.0764497425798546,Dentro do esperado
+WSM,Samoa,East Asia & Pacific,Transição intermediária de desenvolvimento,70.01944065,68.2236260165601,1.7958146334399032,0.48479841631232196,Dentro do esperado
+UGA,Uganda,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",64.2155816,62.71465922561813,1.5009223743818652,0.38488710034708346,Dentro do esperado
+SLE,Sierra Leone,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",56.88673236,64.88743643268248,-8.000704072682474,-2.126048953885926,Abaixo do esperado
+BGR,Bulgaria,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,74.56358707,77.10795233633884,-2.5443652663388434,-0.6527287288061616,Dentro do esperado
+COD,"Congo, Dem. Rep.",Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",59.96244072,58.90115418513274,1.061286534867257,0.27451382911516387,Dentro do esperado
+BWA,Botswana,Sub-Saharan Africa,Transição intermediária de desenvolvimento,62.04575871,73.05776245154352,-11.012003741543523,-2.8751657035397487,Abaixo do esperado
+GRC,Greece,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,80.41608244,78.58269316426751,1.8333892757324861,0.4687092442527743,Dentro do esperado
+DNK,Denmark,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,80.59412958,81.15942390947647,-0.5652943294764725,-0.14546447261979,Dentro do esperado
+JAM,Jamaica,Latin America & Caribbean,Transição intermediária de desenvolvimento,72.28943851,70.10716269455453,2.1822758154454647,0.557900456597471,Dentro do esperado
+CYP,Cyprus,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,81.80149333,78.54634528219157,3.255148047808433,0.8353234215874756,Dentro do esperado
+BLR,Belarus,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,73.73950531,76.34720741058605,-2.607702100586053,-0.6653759344853731,Dentro do esperado
+KAZ,Kazakhstan,Europe & Central Asia,Transição intermediária de desenvolvimento,71.97923102,75.64528119279169,-3.666050172791685,-0.9480210712801377,Dentro do esperado
+BEL,Belgium,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,80.70631194,81.31786992136341,-0.6115579813634042,-0.15654647776932265,Dentro do esperado
+MLI,Mali,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",60.12125985,62.01806949260166,-1.89680964260166,-0.486199635083229,Dentro do esperado
+POL,Poland,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,77.27808527,77.67115812421315,-0.39307285421314475,-0.10004061976834269,Dentro do esperado
+HUN,Hungary,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,75.5700037,77.99632459930622,-2.4263208993062193,-0.6188538977546499,Dentro do esperado
+LBY,Libya,"Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,72.65332031,73.10529794354154,-0.45197763354154574,-0.11585563449269955,Dentro do esperado
+BHR,Bahrain,"Middle East, North Africa, Afghanistan & Pakistan",Alta longevidade e baixa mortalidade infantil,75.75082454,78.60674002900657,-2.855915489006577,-0.7333768397967041,Dentro do esperado
+BFA,Burkina Faso,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",60.94298433,61.80049361473404,-0.8575092847340358,-0.21956609684915562,Dentro do esperado
+GHA,Ghana,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",64.33720534,66.16355024023473,-1.82634490023473,-0.4684609520901689,Dentro do esperado
+SYC,Seychelles,Sub-Saharan Africa,Transição intermediária de desenvolvimento,73.16237091,74.28599182608015,-1.1236209160801423,-0.2916159724157141,Dentro do esperado
+PRT,Portugal,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,80.89189476,78.61746071746741,2.27443404253259,0.5799350205337082,Dentro do esperado
+NOR,Norway,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,81.99495023,82.60448192236723,-0.6095316923672272,-0.15659217857167437,Dentro do esperado
+BDI,Burundi,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",62.7069542,57.89118429295283,4.815769907047169,1.2526267254279742,Acima do esperado
+SEN,Senegal,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",67.3624183,63.70101619962398,3.661402100376023,0.9394878190212584,Dentro do esperado
+QAT,Qatar,"Middle East, North Africa, Afghanistan & Pakistan",Alta longevidade e baixa mortalidade infantil,77.79140376,82.03597933690517,-4.244575576905177,-1.114713879770631,Abaixo do esperado
+LCA,St. Lucia,Latin America & Caribbean,Transição intermediária de desenvolvimento,76.39243252,72.5085494638801,3.883883056119899,1.0077394336272256,Acima do esperado
+HND,Honduras,Latin America & Caribbean,Transição intermediária de desenvolvimento,69.52898147,67.58010732994293,1.9488741400570717,0.4987936438167948,Dentro do esperado
+PNG,Papua New Guinea,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",66.00102041,65.7892837792748,0.21173663072519844,0.05645671383501559,Dentro do esperado
+ESP,Spain,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,82.32940416,80.13849376103036,2.190910398969635,0.5606459490630453,Dentro do esperado
+IND,India,South Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",69.3779891,69.15508066207025,0.22290843792974613,0.05839873448255481,Dentro do esperado
+FRA,France,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,81.90513823,81.7444198425612,0.16071838743880562,0.041484265045657505,Dentro do esperado
+BEN,Benin,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",62.62662,62.04912632626419,0.5774936737358161,0.14822237703623434,Dentro do esperado
+NZL,New Zealand,East Asia & Pacific,Alta longevidade e baixa mortalidade infantil,81.31375727,78.6565445447754,2.6572127252245963,0.6813098489763345,Dentro do esperado
+EGY,"Egypt, Arab Rep.","Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,70.05641038,72.57192125863278,-2.5155108786327816,-0.6583075018971883,Dentro do esperado
+VNM,Viet Nam,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",73.03125783,70.47560963072038,2.5556481992796165,0.6558305078303824,Dentro do esperado
+AFG,Afghanistan,"Middle East, North Africa, Afghanistan & Pakistan","Mortalidade infantil elevada, baixa prevalência de obesidade",60.32951348,65.68824008453011,-5.358726604530105,-1.3875376929470498,Abaixo do esperado
+MUS,Mauritius,Sub-Saharan Africa,Transição intermediária de desenvolvimento,74.12593279,74.42562801205455,-0.29969522205455235,-0.07640626596607353,Dentro do esperado
+GTM,Guatemala,Latin America & Caribbean,Transição intermediária de desenvolvimento,72.0454314,70.4395839372792,1.6058474627208028,0.40884771168162487,Dentro do esperado
+BRA,Brazil,Latin America & Caribbean,Transição intermediária de desenvolvimento,74.711289,74.66451490094956,0.04677409905043817,0.012040449425225077,Dentro do esperado
+SRB,Serbia,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,75.27946837,75.94701312983564,-0.6675447598356357,-0.17112489367320127,Dentro do esperado
+TON,Tonga,East Asia & Pacific,Transição intermediária de desenvolvimento,72.46352791,67.65248663420438,4.811041275795617,1.3480810107735157,Acima do esperado
+MDA,Moldova,Europe & Central Asia,Transição intermediária de desenvolvimento,71.14655162,71.78946788891693,-0.6429162689169345,-0.1632279431160972,Dentro do esperado
+VUT,Vanuatu,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",66.79010699,64.41240837484274,2.3776986151572572,0.6143443006234799,Dentro do esperado
+CHN,China,East Asia & Pacific,Transição intermediária de desenvolvimento,76.5103545,73.73481203271723,2.7755424672827758,0.722724808523786,Dentro do esperado
+JOR,Jordan,"Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,78.50941007,72.32501362516876,6.184396444831236,1.6074655850418476,Acima do esperado
+PAN,Panama,Latin America & Caribbean,Transição intermediária de desenvolvimento,78.14484121,75.6046120785372,2.5402291314627945,0.6535677261347999,Dentro do esperado
+PRY,Paraguay,Latin America & Caribbean,Transição intermediária de desenvolvimento,75.16683709,72.04032258849084,3.1265145015091633,0.7994634418285586,Dentro do esperado
+NPL,Nepal,South Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",69.77673885,66.7095681338549,3.0671707161450996,0.7929999904574845,Dentro do esperado
+RUS,Russian Federation,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,71.29790344,78.0697031836993,-6.7717997436993045,-1.7612446966537425,Abaixo do esperado
+NLD,Netherlands,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,81.28069061,81.71393287789458,-0.43324226789458464,-0.11119332841413927,Dentro do esperado
+CHL,Chile,Latin America & Caribbean,Alta longevidade e baixa mortalidade infantil,80.12508082,77.69247734248563,2.4326034775143626,0.6233137426885723,Dentro do esperado
+BRN,Brunei Darussalam,East Asia & Pacific,Alta longevidade e baixa mortalidade infantil,76.55761257,78.94909293661925,-2.3914803666192483,-0.6340957302309024,Dentro do esperado
+HRV,Croatia,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,77.60709528,77.40556924419012,0.20152603580987716,0.051352567731938005,Dentro do esperado
+ISL,Iceland,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,82.12605142,79.5511221043231,2.574929315676897,0.6700983087624051,Dentro do esperado
+MMR,Myanmar,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",67.42672255,69.67934942302819,-2.2526268730281913,-0.5931181672516298,Dentro do esperado
+MKD,North Macedonia,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,75.34082067,75.2191546531556,0.12166601684440081,0.031191964060702175,Dentro do esperado
+TCD,Chad,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",57.84629101,62.00965458676424,-4.16336357676424,-1.0729123150183941,Abaixo do esperado
+STP,Sao Tome and Principe,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",70.55687146,64.91231283042228,5.644558629577716,1.479749516972731,Acima do esperado
+LSO,Lesotho,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",48.83813559,65.57841341667147,-16.740277826671466,-4.630470583485722,Abaixo do esperado
+KEN,Kenya,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",64.29968929,65.74019716146597,-1.440507871465968,-0.3677898244461014,Dentro do esperado
+ISR,Israel,"Middle East, North Africa, Afghanistan & Pakistan",Alta longevidade e baixa mortalidade infantil,81.91113219,78.77168530501018,3.139446884989823,0.7997318890699606,Dentro do esperado
+COM,Comoros,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",67.42647275,63.58985781151403,3.8366149384859725,0.988389591558793,Dentro do esperado
+MYS,Malaysia,East Asia & Pacific,Transição intermediária de desenvolvimento,74.27826363,75.46898117719432,-1.1907175471943248,-0.3037436044350042,Dentro do esperado
+SVK,Slovak Republic,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,76.59625031,78.0270054821619,-1.430755172161895,-0.3639787854354842,Dentro do esperado
+PER,Peru,Latin America & Caribbean,Transição intermediária de desenvolvimento,80.33747677,72.17851710496056,8.158959665039433,2.104127311475523,Acima do esperado
+FIN,Finland,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,81.19884704,80.59596186313051,0.6028851768694921,0.15392551326021803,Dentro do esperado
+ZWE,Zimbabwe,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",57.4934476,66.12527083940127,-8.631823239401264,-2.2318714027557376,Abaixo do esperado
+CZE,Czechia,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,78.48257933,79.3441412985642,-0.8615619685642031,-0.21930745876733324,Dentro do esperado
+KIR,Kiribati,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",61.68537375,65.2163401812955,-3.5309664312954965,-0.9626230292901007,Dentro do esperado
+COG,"Congo, Rep.",Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",62.05475682,66.84688942277286,-4.79213260277286,-1.265421576315441,Abaixo do esperado
+MWI,Malawi,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",61.82512095,60.611493125305955,1.2136278246940435,0.31285989113600854,Dentro do esperado
+SVN,Slovenia,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,80.46318817,78.1464989355728,2.3166892344272014,0.593121649381473,Dentro do esperado
+EST,Estonia,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,77.63428878,78.12475538712978,-0.4904666071297754,-0.1253994773431904,Dentro do esperado
+AUS,Australia,East Asia & Pacific,Alta longevidade e baixa mortalidade infantil,82.287472,80.45645531863623,1.8310166813637636,0.47036873593425776,Dentro do esperado
+LTU,Lithuania,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,74.36612877,78.32617774071284,-3.9600489707128332,-1.0146310005574832,Abaixo do esperado
+USA,United States,North America,Alta longevidade e baixa mortalidade infantil,78.61058161,83.19767623889005,-4.587094628890057,-1.2276166731713567,Abaixo do esperado
+ARM,Armenia,Europe & Central Asia,Transição intermediária de desenvolvimento,74.27859114,73.26640848638169,1.0121826536183107,0.25800990491679965,Dentro do esperado
+CAN,Canada,North America,Alta longevidade e baixa mortalidade infantil,81.64860674,80.56621528272697,1.082391457273033,0.27803729098386437,Dentro do esperado
+MRT,Mauritania,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",69.45426817,65.79155482779939,3.662713342200618,0.9404153486592446,Dentro do esperado
+MNG,Mongolia,East Asia & Pacific,Transição intermediária de desenvolvimento,69.246045,72.16261371232837,-2.9165687123283703,-0.7455142747815998,Dentro do esperado
+BLZ,Belize,Latin America & Caribbean,Transição intermediária de desenvolvimento,74.30568158,69.66612078635944,4.639560793640555,1.2082433639566306,Acima do esperado
+KOR,"Korea, Rep.",East Asia & Pacific,Alta longevidade e baixa mortalidade infantil,82.40187033,79.36069964816615,3.0411706818338473,0.784401218256376,Dentro do esperado
+SWZ,Eswatini,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",52.11336327,69.5051720305061,-17.391808760506102,-4.785351764312813,Abaixo do esperado
+CIV,Cote d'Ivoire,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",60.9342411,65.40034355096218,-4.466102450962175,-1.147198290821335,Abaixo do esperado
+LAO,Lao PDR,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",66.87363139,67.92407823163708,-1.0504468416370827,-0.27181541545679655,Dentro do esperado
+LBN,Lebanon,"Middle East, North Africa, Afghanistan & Pakistan",Alta longevidade e baixa mortalidade infantil,78.43741249,75.28647459206317,3.150937897936828,0.8137030180864435,Dentro do esperado
+CRI,Costa Rica,Latin America & Caribbean,Transição intermediária de desenvolvimento,80.57423676,74.09328162269173,6.480955137308271,1.6710720405255453,Acima do esperado
+ECU,Ecuador,Latin America & Caribbean,Transição intermediária de desenvolvimento,77.15293465,72.07061750594495,5.082317144055054,1.3030805280866407,Acima do esperado
+LVA,Latvia,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,74.8108617,77.44284775709232,-2.6319860570923197,-0.6753036597396457,Dentro do esperado
+TKM,Turkmenistan,Europe & Central Asia,Transição intermediária de desenvolvimento,68.83222809,71.23914348100666,-2.406915391006663,-0.6162251073243948,Dentro do esperado
+MOZ,Mozambique,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",55.85530982,60.6410438353174,-4.785734015317395,-1.239037079465459,Abaixo do esperado
+IRN,"Iran, Islamic Rep.","Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,77.27827213,73.45788431828707,3.8203878117129335,0.982842160945265,Dentro do esperado
+LBR,Liberia,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",60.37754989,61.36847972793838,-0.9909298379383813,-0.2602719798701057,Dentro do esperado
+SLB,Solomon Islands,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",65.15166823,64.14865350129517,1.0030147287048266,0.26102005752491314,Dentro do esperado
+MDG,Madagascar,Sub-Saharan Africa,"Mortalidade infantil elevada, baixa prevalência de obesidade",63.35879155,61.94592137537409,1.4128701746259082,0.36532541426898496,Dentro do esperado
+ETH,Ethiopia,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",67.10395358,60.42019841612861,6.683755163871382,1.7461556239778675,Acima do esperado
+DEU,Germany,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,80.4259243,81.98365333265268,-1.5577290326526736,-0.40054634444303927,Dentro do esperado
+TLS,Timor-Leste,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",67.83593705,68.21053471932507,-0.37459766932506966,-0.0993396594820306,Dentro do esperado
+GMB,"Gambia, The",Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",63.79523685,61.20302297684503,2.592213873154975,0.6677347242158943,Dentro do esperado
+RWA,Rwanda,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",66.96378175,62.75565043048303,4.208131319516966,1.0831214165850862,Acima do esperado
+FJI,Fiji,East Asia & Pacific,Transição intermediária de desenvolvimento,67.8018416,70.90277302906928,-3.100931429069277,-0.7966589122921147,Dentro do esperado
+NGA,Nigeria,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",61.73359862,67.74285377666685,-6.009255156666846,-1.5774624237477943,Abaixo do esperado
+UKR,Ukraine,Europe & Central Asia,Transição intermediária de desenvolvimento,72.14894514,73.82445895308653,-1.675513813086539,-0.42721674613732946,Dentro do esperado
+SGP,Singapore,East Asia & Pacific,Alta longevidade e baixa mortalidade infantil,82.84921063,81.99082221302562,0.8583884169743783,0.22450369758073582,Dentro do esperado
+GEO,Georgia,Europe & Central Asia,Transição intermediária de desenvolvimento,72.85013916,74.20088181496362,-1.350742654963625,-0.34506829211784706,Dentro do esperado
+TUR,Turkiye,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,76.68525905,76.5751858872076,0.11007316279240342,0.0283413729445596,Dentro do esperado
+PSE,West Bank and Gaza,"Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,74.56005234,69.65175867719691,4.908293662803089,1.2790391334650517,Acima do esperado
+OMN,Oman,"Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,73.77326508,76.22930644786223,-2.456041367862227,-0.6317470567990138,Dentro do esperado
+BGD,Bangladesh,South Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",73.19207211,67.47764508507034,5.7144270249296625,1.523310261459379,Acima do esperado
+NER,Niger,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",59.63358442,59.331034331294816,0.30255008870518196,0.07799565795937541,Dentro do esperado
+ARE,United Arab Emirates,"Middle East, North Africa, Afghanistan & Pakistan",Alta longevidade e baixa mortalidade infantil,80.71356774,79.75970090525033,0.9538668347496753,0.24681514076676608,Dentro do esperado
+SAU,Saudi Arabia,"Middle East, North Africa, Afghanistan & Pakistan",Alta longevidade e baixa mortalidade infantil,76.88889936,79.79495280546146,-2.906053445461467,-0.7513812008193881,Dentro do esperado
+GNB,Guinea-Bissau,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",57.5801364,61.970772844356134,-4.390636444356133,-1.1405686715177445,Abaixo do esperado
+MNE,Montenegro,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,76.86028429,75.87249620612872,0.9877880838712798,0.2550120386680811,Dentro do esperado
+SWE,Sweden,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,81.74239456,81.6860444783533,0.05635008164669841,0.014467821779693394,Dentro do esperado
+PHL,Philippines,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",69.51615532,69.36350252291118,0.15265279708881963,0.03903315322728385,Dentro do esperado
+TGO,Togo,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",61.52164894,62.218483830497945,-0.6968348904979464,-0.17881193834244583,Dentro do esperado
+KHM,Cambodia,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",68.66739766,66.87999717962047,1.7874004803795316,0.4567531843590068,Dentro do esperado
+BHS,"Bahamas, The",Latin America & Caribbean,Transição intermediária de desenvolvimento,72.92357543,75.90236684610936,-2.9787914161093596,-0.7717527065819884,Dentro do esperado
+BIH,Bosnia and Herzegovina,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,76.9957646,74.64145597013162,2.3543086298683846,0.605693348648093,Dentro do esperado
+ARG,Argentina,Latin America & Caribbean,Alta longevidade e baixa mortalidade infantil,76.5300965,77.6292699446047,-1.099173444604702,-0.2810765816598908,Dentro do esperado
+GBR,United Kingdom,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,80.65863594,80.38880079436726,0.26983514563274014,0.06928417970922357,Dentro do esperado
+ZAF,South Africa,Sub-Saharan Africa,Transição intermediária de desenvolvimento,63.26267522,73.88136544216327,-10.618690222163274,-2.793256477919299,Abaixo do esperado
+THA,Thailand,East Asia & Pacific,Transição intermediária de desenvolvimento,76.97043175,73.58096985313597,3.3894618968640344,0.8684970696719837,Dentro do esperado
+GUY,Guyana,Latin America & Caribbean,Transição intermediária de desenvolvimento,66.95276619,70.26323442818293,-3.3104682381829207,-0.847152534948572,Dentro do esperado
+ROU,Romania,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,74.90936922,76.84650603833225,-1.9371368183322488,-0.4957246248096616,Dentro do esperado
+BOL,Bolivia,Latin America & Caribbean,Transição intermediária de desenvolvimento,71.94895895,70.55741611320357,1.3915428367964324,0.3535369403302688,Dentro do esperado
+KGZ,Kyrgyz Republic,Europe & Central Asia,"Mortalidade infantil elevada, baixa prevalência de obesidade",71.54340028,67.97148394944693,3.5719163305530657,0.9103939337874644,Dentro do esperado
+IRQ,Iraq,"Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,71.00605468,71.14076654788917,-0.13471186788916611,-0.035162043570097105,Dentro do esperado
+CHE,Switzerland,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,82.58994495,82.95304059292312,-0.36309564292311336,-0.09401180195948296,Dentro do esperado
+IDN,Indonesia,East Asia & Pacific,"Mortalidade infantil elevada, baixa prevalência de obesidade",70.53899644,71.51107562681976,-0.9720791868197551,-0.2521086965887495,Dentro do esperado
+BTN,Bhutan,South Asia,Transição intermediária de desenvolvimento,73.07489389,70.28694638050445,2.7879475094955524,0.7217216946483014,Dentro do esperado
+ALB,Albania,Europe & Central Asia,Transição intermediária de desenvolvimento,77.76638448,72.62556582783036,5.140818652169642,1.3121366665169085,Acima do esperado
+CMR,Cameroon,Sub-Saharan Africa,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",58.9843954,64.91429988340371,-5.929904483403718,-1.5284174110871502,Abaixo do esperado
+IRL,Ireland,Europe & Central Asia,Alta longevidade e baixa mortalidade infantil,81.13790588,82.18115185403241,-1.043245974032402,-0.26656771398520135,Dentro do esperado
+DZA,Algeria,"Middle East, North Africa, Afghanistan & Pakistan",Transição intermediária de desenvolvimento,76.06909233,73.42677360662452,2.6423187233754817,0.6724172882250236,Dentro do esperado
