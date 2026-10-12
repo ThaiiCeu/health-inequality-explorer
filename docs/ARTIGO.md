@@ -1,6 +1,6 @@
 # Comparação de técnicas de projeção e de algoritmos de agrupamento na exploração visual de desigualdades de saúde entre países
 
-> **Rascunho** nas 5 seções exigidas pela disciplina, pronto para colar no template IEEE (https://www.ieee.org/conferences_events/conferences/publishing/templates.html). Todos os números abaixo vêm de execuções reais dos scripts `R/05`, `R/08` e `R/09` sobre os dados do projeto (N = 159 países, ano de referência 2015). Faltam: nome(s) do(s) autor(es) e afiliação, resumo/abstract, figuras no formato do template e conferência final das referências.
+> **Rascunho** nas 5 seções exigidas pela disciplina, pronto para colar no template IEEE (https://www.ieee.org/conferences_events/conferences/publishing/templates.html). Todos os números abaixo vêm de execuções reais dos scripts `R/04` a `R/09` sobre os dados do projeto (N = 159 países, ano de referência 2015) e conferem com as tabelas de `outputs/tables/`. As figuras estão em `outputs/figures/` e `docs/img/` e aparecem aqui com os mesmos nomes de arquivo. Faltam: nome(s) do(s) autor(es) e afiliação, resumo/abstract, figuras no formato do template e conferência final das referências.
 
 ---
 
@@ -57,7 +57,19 @@ Cada algoritmo assume uma forma de grupo: K-Means e Ward (hierárquico), grupos 
 
 ### A. Dados e pipeline
 
-Os seis indicadores — expectativa de vida, mortalidade infantil, prevalência de obesidade, PIB per capita (PPP), gasto em saúde per capita (PPP) e prevalência de tabagismo — foram coletados por API (WHO GHO e World Bank), padronizados por código ISO3 e reduzidos a um corte transversal de 2015 com 159 países com todos os indicadores disponíveis. Mortalidade infantil, PIB e gasto em saúde entram em log (distribuições assimétricas), e todas as variáveis são padronizadas (z-score). O pipeline em R (scripts `01` a `09`) é reprodutível e termina em arquivos JSON estáticos consumidos pelo painel.
+Os seis indicadores — expectativa de vida, mortalidade infantil, prevalência de obesidade, PIB per capita (PPP), gasto em saúde per capita (PPP) e prevalência de tabagismo — foram coletados por API (WHO GHO e World Bank), padronizados por código ISO3 e reduzidos a um corte transversal de 2015 com 159 países com todos os indicadores disponíveis. Mortalidade infantil, PIB e gasto em saúde entram em log (distribuições assimétricas), e todas as variáveis são padronizadas (z-score). O pipeline em R (scripts `01` a `09`) é reprodutível e termina em arquivos JSON estáticos consumidos pelo painel. Cada etapa responde a uma necessidade da etapa seguinte:
+
+1. **Coleta (`01`)**: baixa os indicadores das APIs da WHO e do World Bank para 2000 a 2022. Baixar todos os anos permite escolher o ano de referência com base em evidência.
+2. **Limpeza (`02`)**: junta as fontes por código ISO3 (os nomes de país diferem entre fontes), resolve duplicidades (sexo, revisões de estimativa) e mede a cobertura por ano. O ano de 2015 foi escolhido por ter a maior cobertura simultânea (159 países); 2020 foi descartado pela distorção da pandemia (Figura 1).
+3. **Exploração (`03`)**: mostra que PIB, gasto em saúde e mortalidade infantil são assimétricos (daí o log) e que PIB e gasto em saúde são muito correlacionados (r = 0,86).
+4. **Regressão (`04`)**: ajusta expectativa de vida sobre cinco fatores, com erros-padrão robustos (HC3) porque os resíduos são heterocedásticos.
+5. **PCA e agrupamento (`05`)**: resume os seis indicadores em dois componentes e define quatro grupos de países com K-Means.
+6. **Esperado vs. observado (`06`)**: compara a expectativa de vida real com a prevista pela regressão.
+7. **Exportação (`07`)**: grava os resultados em JSON para o painel.
+8. **Robustez ao ano (`08`)**: repete a análise para 2010.
+9. **Projeções e algoritmos (`09`)**: executa a comparação central deste trabalho (Seção III-B).
+
+![Figura 1. Cobertura de países por ano de referência.](../outputs/figures/cobertura_por_ano.png)
 
 ### B. Desenho da comparação
 
@@ -70,28 +82,36 @@ Os seis indicadores — expectativa de vida, mortalidade infantil, prevalência 
 
 O painel (HTML/CSS/JavaScript) tem uma seção "Perfis de saúde" com: (i) projeção PCA e cartões de perfil de cada grupo; (ii) uma **matriz país × indicador** (técnica orientada a pixel [4]) com valores padronizados, ordenada por grupo; (iii) o **comparador de projeções**, com visualização lado a lado ou individual de PCA, t-SNE e UMAP, seletor do algoritmo de agrupamento que colore os pontos, destaque de um país nas três projeções, e a tabela de métricas de qualidade. A tabela de métricas e a nota abaixo dela lembram o leitor de que os valores dependem dos hiperparâmetros. Outras seções (mapa coroplético, comparador de países, regressão e esperado vs. observado) servem ao estudo de caso do domínio (Seção IV-E).
 
+![Figura 2. Matriz país × indicador do painel. Cada linha é um país, cada coluna um indicador; verde = situação mais favorável (mortalidade infantil, obesidade e tabagismo têm a escala invertida), faixa lateral = grupo.](img/dashboard_heatmap.png)
+
+![Figura 3. Comparador de projeções do painel: técnica, algoritmo de agrupamento e país destacado são escolhidos pelo usuário, e a tabela de métricas fica abaixo.](img/dashboard_projecoes.png)
+
 ---
 
 ## IV. Resultados
 
 ### A. Qualidade das projeções
 
-Com os parâmetros-padrão (semente 42) e rótulos do K-Means nas 6 variáveis:
+Com os parâmetros-padrão (semente 42) e rótulos do K-Means nas 6 variáveis (Figura 4):
+
+![Figura 4. Os mesmos países e os mesmos grupos (K-Means, K = 4, espaço original) projetados por PCA, t-SNE e UMAP.](../outputs/figures/projecoes_comparacao.png)
 
 | Técnica | Trustworthiness | Continuity | Vizinhos do mesmo grupo | Silhueta 2D |
 |---|---|---|---|---|
 | Espaço original (6D) | 1,000 | 1,000 | 0,903 | 0,332 |
 | PCA | 0,942 | 0,977 | 0,927 | 0,444 |
-| t-SNE | 0,966 | 0,962 | 0,936 | 0,485 |
-| UMAP | 0,961 | 0,971 | 0,952 | 0,495 |
+| t-SNE | 0,982 | 0,963 | 0,934 | 0,499 |
+| UMAP | 0,957 | 0,973 | 0,940 | 0,487 |
 
-Repetindo t-SNE e UMAP com 10 sementes, as médias (desvio-padrão) foram: trustworthiness 0,977 (0,002) e 0,964 (0,005); continuity 0,966 (0,003) e 0,970 (0,002); vizinhos do mesmo grupo 0,936 (0,006) e 0,938 (0,005); silhueta 2D 0,487 (0,017) e 0,495 (0,015). Portanto:
+Repetindo t-SNE e UMAP com 10 sementes, as médias (desvio-padrão) foram, para t-SNE e UMAP respectivamente: trustworthiness 0,977 (0,002) e 0,965 (0,003); continuity 0,965 (0,003) e 0,970 (0,003); vizinhos do mesmo grupo 0,934 (0,005) e 0,942 (0,004); silhueta 2D 0,481 (0,016) e 0,504 (0,020). Portanto:
 
-- **Nenhuma técnica domina.** O PCA tem a maior continuity (0,977) e a menor trustworthiness (0,942); o t-SNE tem a maior trustworthiness média; UMAP e t-SNE têm continuity semelhante.
-- **A vantagem do UMAP em "vizinhos do mesmo grupo" vista com uma semente (0,952) não se sustenta entre sementes** (0,938 contra 0,936): é variação de inicialização, não diferença entre técnicas. Isso ilustra por que não se deve concluir a partir de uma única execução.
-- **A silhueta 2D (0,44 a 0,50) supera a do espaço original (0,33)**: as projeções, sobretudo não lineares, exageram a separação visual entre grupos que no espaço original se tocam. A fração de vizinhos do mesmo grupo no espaço original é de apenas 0,903.
+- **Nenhuma técnica domina.** O PCA tem a maior continuity (0,977) e a menor trustworthiness (0,942); o t-SNE tem a maior trustworthiness, com margem clara sobre o UMAP (0,977 contra 0,965, mais de 3 desvios-padrão); o UMAP tem a melhor continuity entre as duas técnicas não lineares e, na média das sementes, a melhor consistência de vizinhos e a maior silhueta.
+- **As diferenças entre t-SNE e UMAP em vizinhos do mesmo grupo e em silhueta são pequenas** (0,942 contra 0,934; 0,504 contra 0,481), da ordem de 1 a 2 desvios-padrão entre sementes. Com uma única semente, o ranking dessas duas métricas se inverte (t-SNE tem a maior silhueta em 0,499 contra 0,487), o que ilustra por que não se deve concluir a partir de uma só execução.
+- **A silhueta 2D (0,44 a 0,50) supera a do espaço original (0,33)**: as projeções, sobretudo as não lineares, exageram a separação visual entre grupos que no espaço original se tocam. A fração de vizinhos do mesmo grupo no espaço original é de apenas 0,903.
 
-**Sensibilidade a hiperparâmetros.** Reagrupar o plano (K-Means, K = 4) e comparar com os grupos de 6D mostra concordância (ARI) muito variável: t-SNE de 0,52 (perplexity 5) a 0,91 (perplexity 30); UMAP de 0,55 (`n_neighbors` 15) a 0,91 (`n_neighbors` 30). Ou seja, a "estrutura de grupos" visível num único gráfico t-SNE/UMAP pode mudar bastante com a escolha do parâmetro, enquanto o PCA, sem parâmetros, concorda 0,96 com os grupos originais.
+**Sensibilidade a hiperparâmetros.** Reagrupar o plano (K-Means, K = 4) e comparar com os grupos de 6D mostra concordância (ARI) muito variável: no t-SNE, de 0,52 (perplexity 5) a 0,90 (perplexity 45); no UMAP, de 0,56 (`n_neighbors` 5) a 0,88 (`n_neighbors` 30). O PCA, sem parâmetros, concorda 0,96. Isto é, a "estrutura de grupos" visível em um único gráfico t-SNE ou UMAP pode mudar bastante com a escolha do parâmetro (Figura 5).
+
+![Figura 5. Sensibilidade de t-SNE (perplexity) e UMAP (n_neighbors) aos hiperparâmetros, com os mesmos países e as mesmas cores.](../outputs/figures/projecoes_sensibilidade.png)
 
 ### B. Dependência do algoritmo de agrupamento
 
@@ -101,9 +121,11 @@ Repetindo t-SNE e UMAP com 10 sementes, as médias (desvio-padrão) foram: trust
 | Ward | 4 | 0 | 0,318 | 0,72 |
 | PAM | 4 | 0 | 0,294 | 0,53 |
 | GMM | 4 | 0 | 0,220 | 0,33 |
-| HDBSCAN | 3 | 46 países | 0,373* | 0,37 |
+| HDBSCAN | 2 | 38 países | 0,516* | 0,33 |
 
-\* sem os pontos de ruído. O critério BIC escolheria 5 grupos para o GMM, e o HDBSCAN deixa 29% dos países sem grupo. A concordância entre algoritmos é moderada a baixa: **o "número de grupos" não é uma propriedade robusta dos dados, mas do método**. Isso é coerente com um contínuo de desenvolvimento, em que as fronteiras entre grupos vizinhos são arbitrárias. O K-Means calculado em PC1/PC2 (usado em versão anterior do trabalho) concorda 0,96 com o K-Means nas 6 variáveis, o que indica que a redução a dois componentes preserva essa partição específica.
+\* sem os pontos de ruído, por isso não comparável às demais silhuetas. O HDBSCAN deixa 24% dos países sem grupo e encontra apenas 2 grupos. A concordância entre algoritmos é moderada a baixa: **o "número de grupos" não é uma propriedade robusta dos dados, mas do método**. Isso é coerente com um contínuo de desenvolvimento, em que as fronteiras entre grupos vizinhos são arbitrárias. O K-Means calculado em PC1/PC2 (usado nos cartões de perfil do painel) concorda 0,96 com o K-Means nas 6 variáveis, o que indica que a redução a dois componentes preserva essa partição específica.
+
+**Sensibilidade ao ambiente.** Uma execução anterior da mesma análise, com outras versões de pacote, encontrou 3 grupos e 46 países de ruído no HDBSCAN, e uma trustworthiness de 0,966 (em vez de 0,982) para o t-SNE com a mesma semente. Ou seja, os resultados de t-SNE, UMAP e HDBSCAN dependem também de implementação e versão, não só da semente. Os números deste artigo vêm de uma única execução documentada, e o repositório oferece o `renv` para fixar as versões.
 
 ### C. Influência das variáveis
 
@@ -117,13 +139,17 @@ Repetindo a análise para 2010 (158 países): a PCA retém variância semelhante
 
 Um modelo de regressão múltipla da expectativa de vida (log PIB, obesidade, tabagismo, log população, log gasto em saúde; erros-padrão robustos HC3) explica R² ajustado = 0,728 em 2015 (0,683 em 2010). O log do PIB é significativo nos dois anos (p = 0,005 em 2015; p = 0,019 em 2010). O gasto em saúde é apenas marginal em 2015 (p = 0,069; em 2010, p = 0,042), com forte colinearidade com o PIB (VIF ≈ 10). O tabagismo tem associação *positiva* e significativa nos dois anos, interpretada como confundimento histórico (países desenvolvidos tiveram tabagismo alto no passado), não como efeito causal. Os resíduos studentizados do modelo classificam 20 países como abaixo, 120 dentro e 19 acima do esperado; os cinco mais abaixo (Eswatini, Lesoto, Botsuana, África do Sul e Zimbábue) coincidem com a região mais atingida pela epidemia de HIV/AIDS, fator ausente do modelo. Todas essas associações são observacionais.
 
+![Figura 6. PCA dos países e das variáveis (PC1 = 65,9% e PC2 = 15,5% da variância). O tabagismo forma um eixo quase perpendicular ao de desenvolvimento.](../outputs/figures/pca_biplot.png)
+
+![Figura 7. Expectativa de vida observada contra a esperada pelo modelo. Os países em vermelho (abaixo do esperado) são, em sua maioria, do Sul da África.](../outputs/figures/esperado_vs_observado.png)
+
 ---
 
 ## V. Conclusões
 
-Comparamos PCA, t-SNE e UMAP sobre seis indicadores de saúde de 159 países, com grupos definidos no espaço original, e obtivemos quatro conclusões. (1) Nenhuma projeção é superior em todas as métricas: PCA preserva melhor os vizinhos reais, t-SNE evita falsos vizinhos, e as diferenças entre t-SNE e UMAP em separação de grupos se confundem com a variação entre sementes. (2) Projeções não lineares exageram a separação entre grupos (silhueta 2D maior que a do espaço original) e são sensíveis a hiperparâmetros, o que recomenda reportar uma varredura em vez de um único gráfico. (3) O número de grupos depende do algoritmo (3 a 5 grupos conforme o método, com concordância moderada a baixa), sugerindo que os países formam um contínuo, com fronteiras entre perfis convencionais. (4) O tabagismo é a variável que mais molda os grupos; adicionar indicadores com menor cobertura não melhora a separação.
+Comparamos PCA, t-SNE e UMAP sobre seis indicadores de saúde de 159 países, com grupos definidos no espaço original, e obtivemos quatro conclusões. (1) Nenhuma projeção é superior em todas as métricas: PCA preserva melhor os vizinhos reais (continuity 0,977), t-SNE evita falsos vizinhos (trustworthiness média 0,977), e as diferenças entre t-SNE e UMAP em separação de grupos são pequenas diante da variação entre sementes. (2) Projeções não lineares exageram a separação entre grupos (silhueta 2D maior que a do espaço original) e são sensíveis a hiperparâmetros, o que recomenda reportar uma varredura em vez de um único gráfico. (3) O número de grupos depende do algoritmo (de 2 a 4 grupos conforme o método, com concordância moderada a baixa em relação ao K-Means: ARI de 0,33 a 0,72), sugerindo que os países formam um contínuo, com fronteiras entre perfis convencionais. (4) O tabagismo é a variável que mais molda os grupos; adicionar indicadores com menor cobertura não melhora a separação.
 
-**Limitações.** Há um único conjunto de dados, de 159 países e 6 variáveis, em corte transversal; o ARI e a silhueta comparam métodos entre si sem gabarito de grupos; as métricas de t-SNE e UMAP dependem de hiperparâmetros e sementes (por isso reportamos médias e varredura); a regressão é observacional e não permite inferência causal; o K = 4 foi herdado de uma análise anterior por interpretabilidade, não por ser ótimo.
+**Limitações.** Há um único conjunto de dados, de 159 países e 6 variáveis, em corte transversal; o ARI e a silhueta comparam métodos entre si sem gabarito de grupos; as métricas de t-SNE e UMAP dependem de hiperparâmetros, sementes e versões de pacote (por isso reportamos médias e varredura, e uma execução em outro ambiente deu números ligeiramente diferentes); a regressão é observacional e não permite inferência causal; o K = 4 foi herdado de uma análise anterior por interpretabilidade, não por ser ótimo.
 
 **Trabalhos futuros.** Repetir a comparação em conjuntos com agrupamento conhecido (para ter um gabarito), incluir outras técnicas (por exemplo, coordenadas paralelas e PaCMAP), avaliar estabilidade dos grupos por reamostragem (*bootstrap*) e estudar com usuários se as diferenças de métricas afetam a interpretação visual.
 
@@ -163,4 +189,4 @@ Comparamos PCA, t-SNE e UMAP sobre seis indicadores de saúde de 159 países, co
 
 [16] World Bank, *World Development Indicators*. https://data.worldbank.org/
 
-*(Checklist: confirmar cada referência no formato exigido pelo template; inserir figuras `outputs/figures/projecoes_comparacao.png` e `projecoes_sensibilidade.png` e uma captura do comparador do painel; preencher Resumo/Abstract e autoria.)*
+*(Checklist: confirmar cada referência no formato exigido pelo template; converter as figuras 1 a 7 para o formato do template (as imagens estão em `outputs/figures/` e `docs/img/`); preencher Resumo/Abstract e autoria.)*

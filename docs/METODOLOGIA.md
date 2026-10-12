@@ -121,14 +121,16 @@ Escolhido sobre o k=2 "estatisticamente ótimo" (maior silhouette) por oferecer 
 
 | Cluster | N países | Nome descritivo | Expect. vida | Mort. infantil | Países representativos |
 |---|---|---|---|---|---|
-| 4 | 56 | Alta longevidade e baixa mortalidade infantil | 79.2 | 5.4 | Portugal, Coreia do Sul, Israel |
-| 3 | 52 | Transição intermediária de desenvolvimento | 73.3 | 18.7 | Egito, Argélia, Azerbaijão |
-| 1 | 17 | Mortalidade infantil elevada, baixa prevalência de obesidade | 67.7 | 39.4 | Laos, Índia, Nepal |
-| 2 | 34 | Mortalidade infantil muito elevada, indicadores de renda mais baixos | 61.7 | 75.1 | Uganda, Tanzânia, Costa do Marfim |
+| 1 | 56 | Alta longevidade e baixa mortalidade infantil | 79.2 | 5.4 | Portugal, Coreia do Sul, Israel |
+| 2 | 52 | Transição intermediária de desenvolvimento | 73.3 | 18.7 | Egito, Argélia, Azerbaijão |
+| 3 | 17 | Mortalidade infantil elevada, baixa prevalência de obesidade | 67.7 | 39.4 | Laos, Índia, Nepal |
+| 4 | 34 | Mortalidade infantil muito elevada, indicadores de renda mais baixos | 61.7 | 75.1 | Uganda, Tanzânia, Costa do Marfim |
+
+Os números dos clusters são atribuídos por posição na expectativa de vida média (1 = maior), e não pela numeração arbitrária do K-Means, que muda a cada execução; o script `05_pca_clusterizacao.R` faz essa ordenação antes de nomear os grupos.
 
 Nomes deliberadamente descritivos (não valorativos) — evitam termos como "rico/pobre" ou "desenvolvido/atrasado".
 
-**Achado adicional:** obesidade não acompanha desenvolvimento de forma linear — clusters 1 e 2 (Sul da Ásia / África Subsaariana) têm obesidade baixíssima (9–11%) apesar de perfis de saúde muito diferentes entre si; clusters 3 e 4 (renda média/alta) têm obesidade bem mais alta (22–25%) — consistente com a transição epidemiológica descrita na literatura de saúde global.
+**Achado adicional:** obesidade não acompanha desenvolvimento de forma linear — clusters 3 e 4 (Sul da Ásia / África Subsaariana) têm obesidade baixíssima (9–11%) apesar de perfis de saúde muito diferentes entre si; clusters 1 e 2 (renda média/alta) têm obesidade bem mais alta (22–25%) — consistente com a transição epidemiológica descrita na literatura de saúde global.
 
 ---
 
@@ -142,7 +144,7 @@ Usa os valores ajustados e resíduos **studentizados** (não brutos — corrige 
 
 - **Abaixo do esperado, concentrado no Sul da África** (Eswatini, Lesoto, Botsuana, África do Sul, Zimbábue — os 5 mais extremos): coincide com a região historicamente mais atingida pela epidemia de HIV/AIDS, um fator de carga de doença não capturado por nenhuma das 5 variáveis do modelo. Interpretado como boa validação do modelo (o "erro" tem explicação real e conhecida), não como falha.
 - **Acima do esperado:** Peru, Cabo Verde, Etiópia, Costa Rica, Jordânia, Bangladesh — Costa Rica em particular é um caso conhecido na literatura de saúde global como exemplo de bom desempenho em saúde relativo à renda.
-- **Cruzamento com clusters:** o cluster "Mortalidade infantil muito elevada, indicadores de renda mais baixos" concentra 35% dos países "abaixo do esperado" (vs. ~12.6% geral) — consistente com a explicação do HIV/AIDS acima (mesma região geográfica), não um sinal de mau ajuste do modelo para aquele grupo.
+- **Cruzamento com clusters:** o cluster 4, "Mortalidade infantil muito elevada, indicadores de renda mais baixos", concentra 35% dos países "abaixo do esperado" (vs. ~12.6% geral) — consistente com a explicação do HIV/AIDS acima (mesma região geográfica), não um sinal de mau ajuste do modelo para aquele grupo.
 
 **Ressalva central (repetir no dashboard):** esta classificação reflete distância em relação a um modelo com R²≈0.74 e limitações conhecidas (heterocedasticidade, colinearidade PIB×gasto em saúde, N=159, ausência de variáveis de carga de doença/qualidade institucional). **Não é um veredito sobre a qualidade do sistema de saúde de nenhum país.**
 
@@ -159,8 +161,46 @@ Usa os valores ajustados e resíduos **studentizados** (não brutos — corrige 
 
 ---
 
-## 11. Próximos passos
+---
 
-- Fase 9: exportação dos dados finais (indicadores, clusters, classificação esperado/observado) para os formatos que o dashboard vai consumir.
-- Construção do dashboard (`dashboard/`), com esta documentação alimentando diretamente a seção de Metodologia.
-- README do repositório, reaproveitando as tabelas e achados deste documento.
+## 11. Projeções e comparação de algoritmos de agrupamento (script 09)
+
+Esta etapa responde à pergunta de visualização do projeto: PCA, t-SNE e UMAP mostram a mesma estrutura de grupos?
+
+**Desenho.**
+- Variáveis: as mesmas 6 da Seção 8, padronizadas (log em mortalidade, PIB e gasto).
+- Grupos de referência: K-Means (K = 4) no **espaço original de 6 dimensões**, nunca nas coordenadas de uma projeção, para não favorecer o PCA por circularidade. (Os cartões de perfil e o gráfico de PCA do painel usam o K-Means em PC1/PC2; os dois concordam com ARI = 0,956.)
+- Projeções: PCA (`prcomp`), t-SNE (`Rtsne`, perplexity 15) e UMAP (`uwot`, `n_neighbors` 15, `min_dist` 0,1), com semente 42.
+- Métricas (k = 10 vizinhos): trustworthiness, continuity, fração de vizinhos do mesmo grupo e silhueta 2D.
+- Variabilidade: 10 sementes e varredura de perplexity e `n_neighbors` em {5, 15, 30, 45}.
+- Algoritmos: K-Means, Ward.D2, PAM, GMM (`mclust`) e HDBSCAN (`dbscan`, minPts = 5), comparados por ARI e silhueta.
+- Variáveis: remoção de uma por vez e inclusão de escolaridade e médicos (74 países).
+
+**Resultados principais** (tabelas em `outputs/tables/projecoes_*.csv` e `clusterizacao_*.csv`):
+
+| Técnica | Trustworthiness | Continuity | Vizinhos do mesmo grupo | Silhueta 2D |
+|---|---|---|---|---|
+| Espaço original | 1,000 | 1,000 | 0,903 | 0,332 |
+| PCA | 0,942 | 0,977 | 0,927 | 0,444 |
+| t-SNE | 0,982 | 0,963 | 0,934 | 0,499 |
+| UMAP | 0,957 | 0,973 | 0,940 | 0,487 |
+
+- Nenhuma técnica vence em todas as métricas. Na média de 10 sementes, o t-SNE tem trustworthiness 0,977 (dp 0,002) contra 0,965 (0,003) do UMAP; o UMAP tem consistência de vizinhos 0,942 contra 0,934 e silhueta 0,504 contra 0,481, diferenças de 1 a 2 desvios-padrão.
+- O ARI entre os grupos refeitos em 2D e os de 6D varia de 0,52 a 0,90 (t-SNE) e de 0,56 a 0,88 (UMAP), contra 0,96 do PCA.
+- ARI contra o K-Means: Ward 0,72, PAM 0,53, GMM 0,33, HDBSCAN 0,33 (2 grupos e 38 países de ruído).
+- Remoção de variáveis (ARI): tabagismo 0,60, gasto em saúde 0,71, PIB 0,79, obesidade 0,90, expectativa de vida 0,93, mortalidade infantil 0,96.
+- Inclusão das variáveis secundárias (74 países): ARI 0,70; silhueta de 0,376 para 0,324.
+
+**Ressalva de reprodutibilidade.** t-SNE, UMAP e HDBSCAN dependem de sementes e de versões de pacote: em outro ambiente o HDBSCAN deu 3 grupos e 46 países de ruído, e a trustworthiness do t-SNE com a mesma semente foi 0,966. Os valores acima são os da execução registrada em `outputs/tables/`.
+
+## 12. Robustez ao ano (script 08)
+
+Repetição da regressão, do PCA e do K-Means para 2010 (N = 158): R² ajustado 0,683 (0,728 em 2015); PC1 e PC2 com 66,0% e 16,0%; PIB significativo nos dois anos (p = 0,019 e p = 0,005); gasto em saúde significativo em 2010 (p = 0,042) e marginal em 2015 (p = 0,069). Resultados em `outputs/tables/sensibilidade_ano.csv`.
+
+---
+
+## 13. Próximos passos
+
+- Fase 9 (concluída): exportação dos dados finais (indicadores, clusters, classificação esperado/observado) para os formatos que o dashboard vai consumir.
+- Dashboard (`dashboard/`, concluído), com esta documentação alimentando a seção de Metodologia.
+- README e artigo (`docs/ARTIGO.md`), que reaproveitam as tabelas e achados deste documento; falta o resumo e a conversão para o template IEEE.

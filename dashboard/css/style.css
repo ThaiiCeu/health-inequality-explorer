@@ -1128,3 +1128,39 @@ a { color: inherit; }
 @media (max-width: 860px) {
   .proj-grid-lado { grid-template-columns: 1fr; }
 }
+
+
+/* ==========================================================================
+   Figuras e achados (imagens estáticas dos scripts R, com legenda)
+   ========================================================================== */
+
+.fig {
+  margin: 28px 0 8px;
+}
+
+.fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.fig figcaption {
+  margin-top: 10px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--umber);
+  max-width: 760px;
+}
+
+.proj-achados {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.proj-achados li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}

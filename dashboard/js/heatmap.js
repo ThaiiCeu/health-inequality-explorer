@@ -35,10 +35,10 @@
     }
   }
 
-  // Indicadores em que valor ALTO é desfavorável: a cor é invertida para que
-  // verde signifique sempre "situação mais favorável" no eixo de saúde.
+  // Indicadores em que valor ALTO é desfavorável à saúde da população: a cor é
+  // invertida para que verde signifique sempre "situação mais favorável".
   // O z-score mostrado no tooltip continua sendo o valor real (não invertido).
-  const CHAVES_INVERTIDAS = ['mortalidade_infantil'];
+  const CHAVES_INVERTIDAS = ['mortalidade_infantil', 'prevalencia_obesidade', 'prevalencia_tabagismo'];
 
   // Países de referência rotulados à esquerda da matriz.
   const PAISES_REFERENCIA = ['JPN', 'DEU', 'USA', 'CHN', 'BRA', 'IND', 'ZAF', 'NGA', 'TCD'];
@@ -178,7 +178,7 @@
       <span class="heatmap-legend-label">Menos favorável</span>
       <span class="heatmap-legend-swatch" style="background: linear-gradient(90deg, #B5451F, #F5EEE0, #1F6F5C);"></span>
       <span class="heatmap-legend-label">Mais favorável</span>
-      <span class="heatmap-legend-note">Cor = valor padronizado (z-score) do país no indicador; * na mortalidade infantil a escala é invertida (verde = menor mortalidade). O tooltip mostra o z-score real. Linhas ordenadas por grupo e, dentro dele, por expectativa de vida.</span>
+      <span class="heatmap-legend-note">Cor = valor padronizado (z-score) do país no indicador. * Em mortalidade infantil, obesidade e tabagismo, valor alto é desfavorável à saúde, então a escala é invertida (verde = menor valor). O tooltip mostra o z-score real. Linhas ordenadas por grupo e, dentro dele, por expectativa de vida.</span>
     `;
   }
 
