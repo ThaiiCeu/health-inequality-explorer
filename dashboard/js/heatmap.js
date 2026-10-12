@@ -99,7 +99,7 @@
         .attr('text-anchor', 'start')
         .attr('transform', `rotate(-35, ${cx}, 0)`)
         .attr('class', 'heatmap-col-label')
-        .text(invertido ? `${ind.rotulo} · cor invertida` : ind.rotulo);
+        .text(invertido ? `${ind.rotulo} *` : ind.rotulo);
     });
 
     const corpo = svg.append('g').attr('transform', `translate(0, ${alturaLabelTopo})`);
@@ -178,7 +178,7 @@
       <span class="heatmap-legend-label">Menos favorável</span>
       <span class="heatmap-legend-swatch" style="background: linear-gradient(90deg, #B5451F, #F5EEE0, #1F6F5C);"></span>
       <span class="heatmap-legend-label">Mais favorável</span>
-      <span class="heatmap-legend-note">Cor = valor padronizado (z-score) do país no indicador; na mortalidade infantil a escala é invertida (verde = menor mortalidade). O tooltip mostra o z-score real. Linhas ordenadas por grupo e, dentro dele, por expectativa de vida.</span>
+      <span class="heatmap-legend-note">Cor = valor padronizado (z-score) do país no indicador; * na mortalidade infantil a escala é invertida (verde = menor mortalidade). O tooltip mostra o z-score real. Linhas ordenadas por grupo e, dentro dele, por expectativa de vida.</span>
     `;
   }
 
