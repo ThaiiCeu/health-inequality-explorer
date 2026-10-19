@@ -1,0 +1,13 @@
+cluster,nome_cluster,pais_nome,regiao,distancia_centro
+1,Alta longevidade e baixa mortalidade infantil,Portugal,Europe & Central Asia,0.08438619615277104
+1,Alta longevidade e baixa mortalidade infantil,"Korea, Rep.",East Asia & Pacific,0.1500098107882494
+1,Alta longevidade e baixa mortalidade infantil,Israel,"Middle East, North Africa, Afghanistan & Pakistan",0.31725321324848965
+2,Transição intermediária de desenvolvimento,"Egypt, Arab Rep.","Middle East, North Africa, Afghanistan & Pakistan",0.10024565414750997
+2,Transição intermediária de desenvolvimento,Algeria,"Middle East, North Africa, Afghanistan & Pakistan",0.11323213431376071
+2,Transição intermediária de desenvolvimento,Azerbaijan,Europe & Central Asia,0.18261399594643393
+3,"Mortalidade infantil elevada, baixa prevalência de obesidade",Lao PDR,East Asia & Pacific,0.2359754765925789
+3,"Mortalidade infantil elevada, baixa prevalência de obesidade",India,South Asia,0.339067602463252
+3,"Mortalidade infantil elevada, baixa prevalência de obesidade",Nepal,South Asia,0.47634237243518773
+4,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",Uganda,Sub-Saharan Africa,0.06491840576682725
+4,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",Tanzania,Sub-Saharan Africa,0.1915968081805514
+4,"Mortalidade infantil muito elevada, indicadores de renda mais baixos",Cote d'Ivoire,Sub-Saharan Africa,0.2549976194579066

@@ -1,0 +1,50 @@
+{
+  "n_paises": 159,
+  "r_quadrado": 0.737,
+  "r_quadrado_ajustado": 0.728,
+  "coeficientes": [
+    {
+      "variavel": "(Intercept)",
+      "estimativa": 22.343,
+      "erro_padrao": 7.271,
+      "p_valor": 0.0025,
+      "significativo_5pct": true
+    },
+    {
+      "variavel": "log(pib_per_capita_ppp)",
+      "estimativa": 3.498,
+      "erro_padrao": 1.238,
+      "p_valor": 0.0053,
+      "significativo_5pct": true
+    },
+    {
+      "variavel": "prevalencia_obesidade",
+      "estimativa": 0.001,
+      "erro_padrao": 0.033,
+      "p_valor": 0.968,
+      "significativo_5pct": false
+    },
+    {
+      "variavel": "prevalencia_tabagismo",
+      "estimativa": 0.08,
+      "erro_padrao": 0.031,
+      "p_valor": 0.0111,
+      "significativo_5pct": true
+    },
+    {
+      "variavel": "log(populacao)",
+      "estimativa": 0.2,
+      "erro_padrao": 0.192,
+      "p_valor": 0.2981,
+      "significativo_5pct": false
+    },
+    {
+      "variavel": "log(gasto_saude_pc_ppp)",
+      "estimativa": 1.796,
+      "erro_padrao": 0.981,
+      "p_valor": 0.0691,
+      "significativo_5pct": false
+    }
+  ],
+  "nota_metodologica": "Erros-padrao robustos a heterocedasticidade (HC3). Ver METODOLOGIA.md secao 7 para detalhes sobre VIF, diagnosticos e a especificacao alternativa residualizada."
+}

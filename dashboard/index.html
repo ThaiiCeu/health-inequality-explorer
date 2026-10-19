@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Inequality Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="brand">Health Inequality Explorer</span>
+    <nav class="nav">
+      <a href="#inicio" class="nav-link active">Início</a>
+      <a href="#visao-geral" class="nav-link">Visão geral</a>
+      <a href="#explorador" class="nav-link">Comparar países</a>
+      <a href="#perfis" class="nav-link">Perfis de saúde</a>
+      <a href="#regressao" class="nav-link">O que explica a saúde</a>
+      <a href="#esperado" class="nav-link">Esperado vs. observado</a>
+      <a href="#mapa" class="nav-link">Mapa</a>
+      <a href="#metodologia" class="nav-link">Metodologia</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="inicio" class="hero">
+    <svg id="hero-scatter" class="hero-scatter" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+    <div class="hero-content">
+      <p class="eyebrow">159 países · dados WHO &amp; World Bank · corte transversal de 2015</p>
+      <h1 class="hero-title">Renda prevê boa parte da saúde<br>de um país. Não toda.</h1>
+      <p class="hero-subtitle">Como desigualdades socioeconômicas, demográficas e de acesso à saúde se relacionam aos diferentes resultados de saúde entre países — e quais nações performam melhor ou pior do que seu nível de desenvolvimento sozinho explicaria.</p>
+      <a href="#visao-geral" class="hero-cta">Explorar os dados <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </section>
+
+  <section id="visao-geral" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Visão geral</p>
+      <h2 class="section-title">O panorama global em números</h2>
+      <p class="section-lede">Médias e totais entre os 159 países com dados completos em 2015, o ano com maior cobertura simultânea dos indicadores. Os cartões resumem o mundo; as seções seguintes mostram como os países se distribuem em torno dessas médias.</p>
+
+      <div class="kpi-grid" id="kpi-grid">
+        <div class="kpi-card kpi-teal">
+          <p class="kpi-label">Expectativa de vida média</p>
+          <p class="kpi-value" id="kpi-expectativa">—</p>
+          <p class="kpi-caption">anos, ao nascer</p>
+        </div>
+        <div class="kpi-card kpi-rust">
+          <p class="kpi-label">Mortalidade infantil média</p>
+          <p class="kpi-value" id="kpi-mortalidade">—</p>
+          <p class="kpi-caption">por 1.000 nascidos vivos, &lt;5 anos</p>
+        </div>
+        <div class="kpi-card kpi-umber">
+          <p class="kpi-label">Gasto em saúde médio</p>
+          <p class="kpi-value" id="kpi-gasto">—</p>
+          <p class="kpi-caption">per capita, PPP (US$)</p>
+        </div>
+        <div class="kpi-card kpi-ink">
+          <p class="kpi-label">Países analisados</p>
+          <p class="kpi-value" id="kpi-paises">—</p>
+          <p class="kpi-caption">com os 7 indicadores do núcleo completos</p>
+        </div>
+      </div>
+
+      <figure class="fig">
+        <img src="img/dispersao_expectativa_pib.png" alt="Dispersão da expectativa de vida contra o PIB per capita em escala logarítmica, um ponto por país" loading="lazy">
+        <figcaption><strong>O ponto de partida.</strong> Quanto maior a renda, maior a expectativa de vida, mas com retornos decrescentes: o mesmo aumento de renda rende mais anos de vida nos países mais pobres do que nos mais ricos. A dispersão em torno da curva (países com renda parecida e saúde muito diferente) é o que as seções seguintes exploram.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="explorador" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-eyebrow">Comparar países</p>
+      <h2 class="section-title">Como esses países se comparam?</h2>
+      <p class="section-lede">Escolha até 4 países para comparar indicadores, classificação e evolução ao longo do tempo.</p>
+
+      <div class="country-picker">
+        <input type="text" id="country-search" list="country-list" placeholder="Adicionar país..." autocomplete="off">
+        <datalist id="country-list"></datalist>
+        <div class="country-chips" id="country-chips"></div>
+      </div>
+
+      <div class="compare-grid" id="compare-grid"></div>
+
+      <div class="chart-panel">
+        <div class="chart-header">
+          <span class="chart-title">Evolução no tempo</span>
+          <select id="indicator-select" class="indicator-select">
+            <option value="expectativa_vida">Expectativa de vida</option>
+            <option value="mortalidade_infantil">Mortalidade infantil</option>
+            <option value="prevalencia_obesidade">Prevalência de obesidade</option>
+            <option value="pib_per_capita_ppp">PIB per capita</option>
+            <option value="gasto_saude_pc_ppp">Gasto em saúde per capita</option>
+            <option value="prevalencia_tabagismo">Prevalência de tabagismo</option>
+          </select>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="evolution-chart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="perfis" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Perfis de saúde</p>
+      <h2 class="section-title">Quatro perfis de desenvolvimento e saúde</h2>
+      <p class="section-lede">Agrupamento estatístico (K-Means, K=4) sobre 6 indicadores de saúde e desenvolvimento, padronizados. Cada grupo é descrito pelo perfil quantitativo que mais o diferencia dos demais, não por juízo de valor. Esta seção tem três ferramentas: o <strong>PCA</strong> resume os países em 2 eixos; a <strong>matriz</strong> mostra as 6 variáveis país por país; e o <strong>comparador</strong> testa se três técnicas de projeção mostram os mesmos grupos.</p>
+
+      <div class="pca-panel">
+        <svg id="pca-scatter" viewBox="0 0 900 480" role="img" aria-label="Posição dos países no espaço dos dois primeiros componentes principais, coloridos por cluster"></svg>
+        <div class="pca-legend" id="pca-legend"></div>
+      </div>
+
+      <div class="callout-box" style="margin: 20px 0 8px;">
+        <strong>Como ler o gráfico de PCA.</strong> Cada ponto é um país; países próximos têm perfis parecidos. O eixo horizontal (PC1, 65,9% da variância) separa os países de alta renda, gasto em saúde e longevidade dos de alta mortalidade infantil, ou seja, é um eixo geral de desenvolvimento. O eixo vertical (PC2, 15,5%) é quase só tabagismo. Os dois eixos juntos retêm 81,4% da informação; o restante é perdido na projeção. As cores e os cartões abaixo vêm de um K-Means sobre PC1 e PC2; no comparador mais abaixo, os grupos-padrão vêm de um K-Means sobre as 6 variáveis, e os dois concordam quase totalmente (ARI 0,96).
+      </div>
+
+      <div class="cluster-grid" id="cluster-grid"></div>
+
+      <figure class="fig">
+        <img src="img/pca_biplot.png" alt="Biplot do PCA: países coloridos por região e setas das seis variáveis" loading="lazy">
+        <figcaption><strong>PCA com as variáveis.</strong> As setas mostram para onde cada variável "aponta". PIB, gasto em saúde e expectativa de vida apontam juntos; a mortalidade infantil aponta no sentido oposto; o tabagismo é quase perpendicular a tudo, o que explica por que ele forma um eixo próprio. Aqui os países estão coloridos por região, não por grupo.</figcaption>
+      </figure>
+
+      <div class="heatmap-section">
+        <h3 class="heatmap-title">As 6 variáveis, país por país</h3>
+        <p class="heatmap-lede">O gráfico acima resume cada país em 2 dimensões (PC1/PC2). Esta matriz mostra as 6 variáveis originais lado a lado — cor = quão favorável à saúde é o valor do país em relação à média (verde = mais favorável, laranja = menos), já na mesma transformação usada no PCA. Em mortalidade infantil, obesidade e tabagismo, valor alto é desfavorável, então a escala é invertida (asterisco no título da coluna). Passe o mouse sobre uma linha para ver os valores. <strong>O que ver:</strong> nos grupos de cima, expectativa de vida, mortalidade, renda e gasto são quase todos verdes; nos de baixo, laranja, formando um gradiente suave. Obesidade e tabagismo não seguem esse gradiente: variam dentro de cada grupo, e o grupo de menor renda tem obesidade baixa (verde).</p>
+        <div class="heatmap-legend" id="heatmap-legend"></div>
+        <div class="heatmap-panel" id="heatmap-panel"></div>
+      </div>
+
+      <div class="proj-section">
+        <h3 class="heatmap-title">Comparar técnicas de projeção</h3>
+        <p class="heatmap-lede">Os mesmos 159 países projetados em 2 dimensões por três técnicas — PCA, t-SNE e UMAP — e coloridos pelos grupos de diferentes algoritmos de clusterização. Troque o algoritmo para ver quanto a "formação de grupos" depende do método, e destaque um país para achá-lo nas três projeções. Os eixos de t-SNE e UMAP não têm interpretação: só a vizinhança local importa. Os grupos-padrão são definidos no espaço original de 6 dimensões, e não nas coordenadas da projeção, para não favorecer nenhuma técnica por construção.</p>
+        <div class="proj-controls">
+          <div class="proj-control">
+            <span class="proj-control-label">Visualização</span>
+            <div class="filter-chips" id="proj-modo">
+              <button class="filter-chip active" data-modo="lado">Lado a lado</button>
+              <button class="filter-chip" data-modo="pca">PCA</button>
+              <button class="filter-chip" data-modo="tsne">t-SNE</button>
+              <button class="filter-chip" data-modo="umap">UMAP</button>
+            </div>
+          </div>
+          <div class="proj-control">
+            <label class="proj-control-label" for="proj-algoritmo">Colorir por</label>
+            <select id="proj-algoritmo"></select>
+          </div>
+          <div class="proj-control">
+            <label class="proj-control-label" for="proj-destaque">Destacar país</label>
+            <select id="proj-destaque"><option value="">Nenhum</option></select>
+          </div>
+        </div>
+        <div class="proj-grid proj-grid-lado" id="proj-grid"></div>
+        <div class="pca-legend" id="proj-legenda"></div>
+        <div class="proj-metricas" id="proj-metricas"></div>
+        <p class="proj-nota" id="proj-nota"></p>
+
+        <div class="callout-box" style="margin-top: 24px;">
+          <strong>O que esta comparação mostra</strong>
+          <ul class="proj-achados">
+            <li><strong>Nenhuma técnica vence em tudo.</strong> O PCA tem a maior continuity (0,977); o t-SNE, a maior trustworthiness (0,982 em uma execução; 0,977 na média de 10 sementes); o UMAP tem a melhor consistência de vizinhos e silhueta na média de 10 sementes, mas a diferença para o t-SNE é pequena (cerca de 1 a 2 desvios-padrão entre sementes).</li>
+            <li><strong>Projeções não lineares exageram a separação.</strong> A silhueta 2D (0,44 a 0,50) é maior que a do espaço original (0,33): grupos que em 6D se tocam parecem mais separados no plano.</li>
+            <li><strong>Os parâmetros importam.</strong> Reagrupar o plano 2D e comparar com os grupos de 6D dá ARI de 0,52 a 0,90 no t-SNE e de 0,56 a 0,88 no UMAP, conforme a perplexity ou o número de vizinhos. O PCA, sem parâmetros, dá 0,96.</li>
+            <li><strong>O algoritmo de agrupamento importa.</strong> Em relação ao K-Means, o ARI é 0,72 (Ward), 0,53 (PAM), 0,33 (GMM) e 0,33 (HDBSCAN, que encontra 2 grupos e deixa 38 países sem grupo). O número de grupos é uma propriedade do método, não dos dados.</li>
+            <li><strong>O tabagismo é a variável que mais molda os grupos:</strong> sem ele, o agrupamento muda bastante (ARI 0,60). Já a mortalidade infantil é quase redundante com a expectativa de vida (ARI 0,96 ao removê-la).</li>
+          </ul>
+        </div>
+
+        <figure class="fig">
+          <img src="img/projecoes_sensibilidade.png" alt="Oito projeções: t-SNE com perplexity 5, 15, 30 e 45 e UMAP com n_neighbors 5, 15, 30 e 45" loading="lazy">
+          <figcaption><strong>Sensibilidade aos parâmetros.</strong> Os mesmos países e as mesmas cores, com parâmetros diferentes. Em alguns painéis os grupos aparecem como ilhas separadas; em outros, como um contínuo. Por isso não se deve tirar conclusões de um único gráfico t-SNE ou UMAP.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="regressao" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-eyebrow">O que explica a saúde</p>
+      <h2 class="section-title">O que está associado à expectativa de vida?</h2>
+      <p class="section-lede">Resultado de um modelo de regressão múltipla: mostra associação estatística, não causa e efeito. Cada coeficiente diz quanto a expectativa de vida muda, em anos, quando aquele fator aumenta e todos os outros ficam fixos.</p>
+
+      <div class="disclaimer-box">
+        <strong>Correlação não é causalidade.</strong> Este modelo mostra quais fatores estão estatisticamente associados à expectativa de vida entre países, controlando uns pelos outros — não prova que um causa o outro. Ver <a href="#metodologia">metodologia completa</a> para as limitações detalhadas.
+      </div>
+
+      <div class="model-stats" id="model-stats"></div>
+
+      <div class="callout-box" style="margin: 20px 0;">
+        <strong>Em resumo.</strong> Dobrar o PIB per capita está associado a cerca de <strong>+2,4 anos</strong> de expectativa de vida (coeficiente 3,50 × ln 2). O gasto em saúde tem associação apenas marginal depois de descontar o PIB (p = 0,069), porque os dois são muito correlacionados (r = 0,86). O tabagismo tem sinal positivo, o que <em>não</em> é efeito causal: países ricos fumaram muito no passado e hoje vivem mais por outros motivos. A obesidade e a população não mostram associação.
+      </div>
+
+      <div class="coef-list" id="coef-list"></div>
+
+      <div class="callout-box" id="vif-callout"></div>
+
+      <figure class="fig">
+        <img src="img/matriz_correlacao.png" alt="Matriz de correlação de Pearson entre os indicadores" loading="lazy">
+        <figcaption><strong>Por que há colinearidade.</strong> PIB e gasto em saúde têm correlação de 0,86; mortalidade infantil e expectativa de vida, de −0,80. (Esta matriz usa os 74 países que têm também os dois indicadores secundários, escolaridade e médicos.)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="esperado" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Esperado vs. observado</p>
+      <h2 class="section-title">Quem performa acima ou abaixo do esperado?</h2>
+      <p class="section-lede">Cada ponto compara a expectativa de vida observada de um país com a que o modelo da seção anterior previu, dado seu perfil socioeconômico.</p>
+
+      <div class="callout-box" style="margin-bottom: 28px;">
+        <strong>Como ler:</strong> pontos sobre a linha diagonal tiveram resultado igual ao previsto. Acima da linha = melhor que o esperado; abaixo = pior. Isso não é um veredito sobre a qualidade do sistema de saúde — reflete a distância em relação a um modelo com R² ajustado ≈ 0,73 e limitações conhecidas (ver Metodologia). No total, 19 países ficam acima, 120 dentro e 20 abaixo do esperado (±1 desvio-padrão do resíduo studentizado).
+      </div>
+
+      <div class="filter-chips" id="classification-filters">
+        <button class="filter-chip active" data-filtro="todos">Todos</button>
+        <button class="filter-chip" data-filtro="Acima do esperado">Acima do esperado</button>
+        <button class="filter-chip" data-filtro="Dentro do esperado">Dentro do esperado</button>
+        <button class="filter-chip" data-filtro="Abaixo do esperado">Abaixo do esperado</button>
+      </div>
+
+      <div class="chart-panel">
+        <div class="chart-canvas-wrap" style="height: 440px;">
+          <canvas id="expected-chart"></canvas>
+        </div>
+      </div>
+
+      <div class="extremes-grid">
+        <div class="extremes-col">
+          <p class="extremes-title extremes-title-acima">Mais acima do esperado</p>
+          <div id="extremes-acima"></div>
+        </div>
+        <div class="extremes-col">
+          <p class="extremes-title extremes-title-abaixo">Mais abaixo do esperado</p>
+          <div id="extremes-abaixo"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mapa" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-eyebrow">Mapa interativo</p>
+      <h2 class="section-title">Onde cada indicador é mais forte ou mais fraco</h2>
+      <p class="section-lede">Selecione um indicador e um ano para colorir o mapa. Filtre por região ou perfil de cluster, e clique em um país para ver o perfil detalhado.</p>
+
+      <div class="map-controls">
+        <div class="map-control">
+          <label for="map-indicator">Indicador</label>
+          <select id="map-indicator">
+            <option value="expectativa_vida">Expectativa de vida</option>
+            <option value="mortalidade_infantil">Mortalidade infantil</option>
+            <option value="prevalencia_obesidade">Prevalência de obesidade</option>
+            <option value="pib_per_capita_ppp">PIB per capita</option>
+            <option value="gasto_saude_pc_ppp">Gasto em saúde per capita</option>
+            <option value="prevalencia_tabagismo">Prevalência de tabagismo</option>
+          </select>
+        </div>
+        <div class="map-control map-control-year">
+          <label for="map-year">Ano: <span id="map-year-label">2015</span></label>
+          <input type="range" id="map-year" min="2000" max="2022" step="1" value="2015">
+        </div>
+        <div class="map-control">
+          <label for="map-region">Região</label>
+          <select id="map-region"><option value="todas">Todas</option></select>
+        </div>
+        <div class="map-control">
+          <label for="map-cluster">Perfil de cluster</label>
+          <select id="map-cluster"><option value="todos">Todos</option></select>
+        </div>
+      </div>
+
+      <div class="map-panel">
+        <svg id="world-map" viewBox="0 0 960 500" role="img" aria-label="Mapa mundial colorido pelo indicador selecionado"></svg>
+        <div class="map-legend" id="map-legend"></div>
+        <div class="map-tooltip" id="map-tooltip"></div>
+      </div>
+
+      <div class="map-detail" id="map-detail">
+        <p class="map-detail-empty">Clique em um país no mapa para ver o perfil detalhado aqui.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodologia" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Metodologia</p>
+      <h2 class="section-title">Como esta análise foi feita</h2>
+      <p class="section-lede">Resumo das decisões metodológicas de cada etapa. A documentação completa, com todos os números e diagnósticos, está no arquivo <code>docs/METODOLOGIA.md</code> do repositório.</p>
+
+      <div class="accordion" id="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Fontes de dados</button>
+          <div class="accordion-panel">
+            <p>Nove indicadores de duas fontes: <strong>WHO Global Health Observatory</strong> (expectativa de vida, mortalidade infantil, médicos por 10 mil habitantes, prevalência de obesidade) e <strong>World Bank</strong> (PIB per capita PPP, escolaridade esperada, população, gasto em saúde per capita, prevalência de tabagismo).</p>
+            <p>Gasto em saúde e tabagismo foram migrados da WHO para o World Bank durante a coleta: os códigos nativos da WHO (base GHED) retornavam 0 registros por viverem em portais regionais separados, não no endpoint global usado no pipeline.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Coleta e limpeza</button>
+          <div class="accordion-panel">
+            <p>Coleta via API para toda a janela 2000–2022, com busca de indicadores por nome (não códigos fixos) para resistir a mudanças na API da WHO, já anunciadas pela própria organização.</p>
+            <p>Países combinados entre as duas fontes por código <strong>ISO3</strong>, não por nome em texto livre — WHO e World Bank grafam países de forma diferente. Duplicidades (desagregação por sexo, revisões de estimativa) resolvidas priorizando "ambos os sexos" e a publicação mais recente.</p>
+            <p><strong>Núcleo vs. secundários:</strong> médicos per capita e escolaridade têm cobertura bem mais fraca que os outros 7 indicadores — tratados como secundários (usados só em checagens de robustez) para não reduzir a amostra principal de 159 para 74 países.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Ano de referência e amostra</button>
+          <div class="accordion-panel">
+            <p><strong>2015</strong>, com <strong>159 países</strong> — o ano com maior cobertura simultânea dos 7 indicadores do núcleo (empatado com 2020, mas 2020 foi descartado por distorção da pandemia nos dados de mortalidade e expectativa de vida).</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Regressão — o que explica a saúde</button>
+          <div class="accordion-panel">
+            <p>Modelo: expectativa de vida em função de log(PIB per capita), obesidade, tabagismo, log(população) e log(gasto em saúde). R² ajustado = 0,728, N = 159.</p>
+            <p>PIB per capita sustenta associação forte mesmo após corrigir erros-padrão para heterocedasticidade (HC3). Gasto em saúde mostrou associação apenas <strong>marginal</strong> após essa correção (p ≈ 0,07) — grande parte da significância inicial era artefato da heterocedasticidade nos resíduos, não um efeito robusto.</p>
+            <p>PIB per capita e gasto em saúde são fortemente correlacionados (r = 0,86, VIF ≈ 10) — uma especificação alternativa com gasto em saúde "residualizado" (ortogonal ao PIB) confirmou o mesmo resultado sem o problema de colinearidade.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">PCA e clusterização</button>
+          <div class="accordion-panel">
+            <p>Os 6 indicadores de perfil (expectativa de vida, mortalidade infantil, obesidade, PIB, gasto em saúde e tabagismo) são padronizados, com log em mortalidade, PIB e gasto. PC1 (65,9% da variância) é um eixo geral de desenvolvimento; PC2 (15,5%) é quase exclusivamente tabagismo, um eixo praticamente independente do resto. Reter 2 componentes é uma decisão de julgamento (o critério de Kaiser sugeriria 1).</p>
+            <p>4 clusters via K-Means, escolhidos sobre o k=2 "estatisticamente ótimo" (maior silhouette) por oferecerem perfis mais ricos e diferenciados. Comparação com clusterização hierárquica mostrou forte concordância nos extremos e mais divergência no grupo de renda média — sinal de que essa fronteira é um gradiente contínuo, não uma quebra nítida.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Projeções: PCA, t-SNE e UMAP</button>
+          <div class="accordion-panel">
+            <p>Os mesmos países são projetados em 2 dimensões por três técnicas: <strong>PCA</strong> (linear, determinística, eixos interpretáveis), <strong>t-SNE</strong> e <strong>UMAP</strong> (não lineares, preservam vizinhanças locais, dependem de parâmetros e sementes, eixos sem interpretação). Os parâmetros-padrão são perplexity 15 (t-SNE) e n_neighbors 15 (UMAP).</p>
+            <p>A qualidade é medida, não só vista: <strong>trustworthiness</strong> (poucos "falsos vizinhos" no plano), <strong>continuity</strong> (poucos vizinhos reais separados), fração dos 10 vizinhos mais próximos que são do mesmo grupo e silhueta no plano. t-SNE e UMAP foram repetidos com 10 sementes e com perplexity e n_neighbors em 5, 15, 30 e 45.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Algoritmos de agrupamento e variáveis</button>
+          <div class="accordion-panel">
+            <p>Cinco algoritmos foram comparados no espaço original: K-Means, hierárquico de Ward, PAM (K-medoides), misturas gaussianas (GMM) e HDBSCAN (por densidade, sem fixar K, com pontos de ruído). A concordância é medida pelo índice de Rand ajustado (ARI: 1 = idênticos, perto de 0 = acaso). Como não existe gabarito de grupos nestes dados, o ARI compara métodos entre si, não mede acerto.</p>
+            <p>Para avaliar o papel de cada variável, removeu-se uma por vez (K-Means, K=4) e, separadamente, acrescentaram-se escolaridade e médicos, na subamostra de 74 países que os têm: o agrupamento muda (ARI 0,70) e a separação piora (silhueta de 0,376 para 0,324).</p>
+            <p>Resultados de t-SNE, UMAP e HDBSCAN dependem de sementes e de versões de pacote. Em outro ambiente, o HDBSCAN encontrou 3 grupos e 46 países de ruído, em vez de 2 e 38. Por isso o repositório oferece o <code>renv</code> para travar as versões.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Robustez a outro ano</button>
+          <div class="accordion-panel">
+            <p>A regressão, o PCA e o K-Means foram refeitos para 2010 (158 países). A estrutura se mantém: R² ajustado 0,683 (0,728 em 2015), PC1 e PC2 com 66,0% e 16,0%, PIB significativo nos dois anos. O gasto em saúde é significativo em 2010 (p = 0,042) mas só marginal em 2015 (p = 0,069), o que mostra que esse resultado é frágil.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Esperado vs. observado</button>
+          <div class="accordion-panel">
+            <p>Classificação baseada em resíduos <strong>studentizados</strong> do modelo de regressão (não resíduo bruto, para corrigir a heterocedasticidade já detectada), com limite de ±1 desvio-padrão — critério estatístico padrão (~68%/16%/16%), não um corte arbitrário.</p>
+            <p>Os países mais "abaixo do esperado" se concentram no Sul da África (Eswatini, Lesoto, Botsuana...) — coincide com a região historicamente mais atingida pela epidemia de HIV/AIDS, um fator de carga de doença que nenhuma variável do modelo captura. Interpretado como validação do modelo, não como falha.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">Limitações gerais</button>
+          <div class="accordion-panel">
+            <ul>
+              <li>Corte transversal de um único ano (2015) — não captura tendências individuais por país.</li>
+              <li>Amostra de 159 de ~217 países reconhecidos, por exigência de cobertura simultânea.</li>
+              <li>Desenho observacional — correlação não implica causalidade em nenhuma análise.</li>
+              <li>Ausência de variáveis de carga de doença específica (HIV/AIDS, conflitos, desastres).</li>
+              <li>Escolaridade (World Bank) tem cobertura em colapso após 2018; tabagismo tem ao menos um ano (2019) sem nenhum dado.</li>
+              <li>Retenção de 2 componentes no PCA e K=4 na clusterização são decisões de julgamento documentadas, não resultados puramente algorítmicos.</li>
+              <li>A comparação de projeções usa um único conjunto de dados (159 países, 6 variáveis); as métricas de t-SNE e UMAP variam com parâmetros e sementes.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Health Inequality Explorer — dados da WHO Global Health Observatory e World Bank. Ver <a href="#metodologia">metodologia completa</a>.</p>
+</footer>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/explorer.js"></script>
+<script src="js/profiles.js"></script>
+<script src="js/heatmap.js"></script>
+<script src="js/projections.js"></script>
+<script src="js/regression.js"></script>
+<script src="js/expected.js"></script>
+<script src="js/map.js"></script>
+<script src="js/methodology.js"></script>
+</body>
+</html>

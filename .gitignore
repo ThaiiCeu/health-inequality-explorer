@@ -1,0 +1,18 @@
+# Dados brutos não devem ir para o repositório (reproduzíveis via 01_coleta_dados.R)
+data/raw/*
+!data/raw/.gitkeep
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Quarto
+/.quarto/
+*_files/
