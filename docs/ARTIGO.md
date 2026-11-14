@@ -189,4 +189,60 @@ Comparamos PCA, t-SNE e UMAP sobre seis indicadores de saúde de 159 países, co
 
 [16] World Bank, *World Development Indicators*. https://data.worldbank.org/
 
-*(Checklist: confirmar cada referência no formato exigido pelo template; converter as figuras 1 a 7 para o formato do template (as imagens estão em `outputs/figures/` e `docs/img/`); preencher Resumo/Abstract e autoria.)*
+[17] K. Pearson, "On lines and planes of closest fit to systems of points in space," *Philosophical Magazine*, vol. 2, no. 11, pp. 559–572, 1901.
+
+[18] H. Hotelling, "Analysis of a complex of statistical variables into principal components," *J. Educational Psychology*, vol. 24, no. 6, pp. 417–441, 1933.
+
+[19] G. Hinton, S. Roweis, "Stochastic neighbor embedding," *Advances in Neural Information Processing Systems 15*, 2002, pp. 857–864.
+
+[20] L. van der Maaten, "Accelerating t-SNE using tree-based algorithms," *J. Machine Learning Research*, vol. 15, pp. 3221–3245, 2014.
+
+[21] E. Becht et al., "Dimensionality reduction for visualizing single-cell data using UMAP," *Nature Biotechnology*, vol. 37, pp. 38–44, 2019.
+
+[22] D. Kobak, G. C. Linderman, "Initialization is critical for preserving global data structure in both t-SNE and UMAP," *Nature Biotechnology*, vol. 39, pp. 156–157, 2021.
+
+[23] S. Kaski et al., "Trustworthiness and metrics in visualizing similarity of gene expression," *BMC Bioinformatics*, vol. 4, art. 48, 2003.
+
+[24] J. Venna, J. Peltonen, K. Nybo, H. Aidos, S. Kaski, "Information retrieval perspective to nonlinear dimensionality reduction for data visualization," *J. Machine Learning Research*, vol. 11, pp. 451–490, 2010.
+
+[25] W. M. Rand, "Objective criteria for the evaluation of clustering methods," *J. American Statistical Association*, vol. 66, no. 336, pp. 846–850, 1971.
+
+[26] J. MacQueen, "Some methods for classification and analysis of multivariate observations," *Proc. 5th Berkeley Symp. Mathematical Statistics and Probability*, vol. 1, 1967, pp. 281–297.
+
+[27] S. P. Lloyd, "Least squares quantization in PCM," *IEEE Trans. Information Theory*, vol. 28, no. 2, pp. 129–137, 1982.
+
+[28] J. H. Ward Jr., "Hierarchical grouping to optimize an objective function," *J. American Statistical Association*, vol. 58, no. 301, pp. 236–244, 1963.
+
+[29] A. P. Dempster, N. M. Laird, D. B. Rubin, "Maximum likelihood from incomplete data via the EM algorithm," *J. Royal Statistical Society: Series B*, vol. 39, no. 1, pp. 1–38, 1977.
+
+[30] M. Hahsler, M. Piekenbrock, D. Doran, "dbscan: fast density-based clustering with R," *J. Statistical Software*, vol. 91, no. 1, pp. 1–30, 2019.
+
+[31] J. S. Long, L. H. Ervin, "Using heteroscedasticity consistent standard errors in the linear regression model," *The American Statistician*, vol. 54, no. 3, pp. 217–224, 2000.
+
+[32] J. G. MacKinnon, H. White, "Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties," *J. Econometrics*, vol. 29, no. 3, pp. 305–325, 1985.
+
+[33] R. D. Cook, S. Weisberg, *Residuals and Influence in Regression*. Chapman and Hall, 1982.
+
+[34] Commission on Social Determinants of Health, *Closing the gap in a generation: health equity through action on the social determinants of health*. World Health Organization, 2008. https://www.who.int/publications/i/item/9789241563703
+
+[35] M. Marmot, "Social determinants of health inequalities," *The Lancet*, vol. 365, pp. 1099–1104, 2005.
+
+[36] S. H. Preston, "The changing relation between mortality and level of economic development," *Population Studies*, vol. 29, no. 2, pp. 231–248, 1975.
+
+[37] D. Cutler, A. Deaton, A. Lleras-Muney, "The determinants of mortality," *J. Economic Perspectives*, vol. 20, no. 3, pp. 97–120, 2006.
+
+[38] A. Deaton, "Health, inequality, and economic development," *J. Economic Literature*, vol. 41, no. 1, pp. 113–158, 2003.
+
+[39] B. G. Link, J. Phelan, "Social conditions as fundamental causes of disease," *J. Health and Social Behavior*, vol. 35, pp. 80–94, 1995.
+
+[40] F. A. S. Bokhari, Y. Gai, P. Gottret, "Government health expenditures and health outcomes," *Health Economics*, vol. 16, no. 3, pp. 257–273, 2007.
+
+[41] R. Doll, R. Peto, J. Boreham, I. Sutherland, "Mortality in relation to smoking: 50 years' observations on male British doctors," *BMJ*, vol. 328, no. 7455, art. 1519, 2004.
+
+[42] R. Chetty et al., "The association between income and life expectancy in the United States, 2001–2014," *JAMA*, vol. 315, no. 16, pp. 1750–1766, 2016.
+
+[43] The Global BMI Mortality Collaboration, "Body-mass index and all-cause mortality: individual-participant-data meta-analysis of 239 prospective studies in four continents," *The Lancet*, vol. 388, no. 10046, pp. 776–786, 2016.
+
+[44] J. Bor, A. J. Herbst, M.-L. Newell, T. Bärnighausen, "Increases in adult life expectancy in rural South Africa: valuing the scale-up of HIV treatment," *Science*, vol. 339, no. 6122, 2013.
+
+*(Checklist: as referências [17] a [44] foram incluídas (técnicas e métricas, e motivação sobre expectativa de vida) e ainda precisam ser citadas no texto, nas Seções I e II, e ter DOI e volume conferidos; confirmar cada referência no formato exigido pelo template; converter as figuras 1 a 7 para o formato do template (as imagens estão em `outputs/figures/` e `docs/img/`); preencher Resumo/Abstract e autoria.)*
